@@ -7,7 +7,7 @@ export function fetchPlayers() {
       .then(res => {
         return res.json()
       }).then(responseJson => {
-        dispatch({type: 'FETCH_PLAYERS', payload: responseJson.images})
+        dispatch({type: 'ADD_PLAYER', payload: responseJson})
     })
   }
 }

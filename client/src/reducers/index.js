@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux';
 import playersReducer from './players_reducer';
 
