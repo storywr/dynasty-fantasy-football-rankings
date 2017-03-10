@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Navbar} from 'react-bootstrap'
+import PlayerList from './PlayerList'
+import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from './actions/playerAction.js'
 
-class App extends Component {
+export class App extends Component {
+  componentDidMount() {
+    if (this.props.playerPics.length === 0) {
+      console.log('in component did mount')
+      this.props.actions.fetchPlayers()
+    }
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">PlayerBook</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+        <PlayerList playerPics={this.props.playerPics} />
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  console.log('in map state to props')
+  return {playerPics: state.players.pictures}
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
