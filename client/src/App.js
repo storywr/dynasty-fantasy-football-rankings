@@ -3,17 +3,16 @@ import { bindActionCreators } from 'redux'
 import PlayerList from './PlayerList'
 import {connect} from 'react-redux'
 import * as actions from './actions/playerActions.js'
+import PlayerInput from './components/PlayerInput'
+import Players from './components/Players'
 
 class App extends Component {
-  componentDidMount() {
-    if (this.props.playerNames.length === 0) {
-      this.props.actions.fetchPlayers()
-    }
-  }
   render() {
     return (
       <div className="App">
         <h2>Players</h2>
+        <PlayerInput store={this.props.store} />
+        <Players store={this.props.store} />
         <PlayerList playerList={this.props.playerNames} />
       </div>
     );
