@@ -2,18 +2,15 @@ import React from 'react'
 
 const PlayerList = (props) => {
   function listPlayers() {
-    return props.playerNames.map(playerName => {
+    return props.players.map(player => <li key={player.id}>{player.name}</li>)
       return (
         <div>
-          <div>
-            <ul>
-              <li>{playerName}</li>
-            </ul>
-          </div>
+          <ul>
+            {players}
+          </ul>
         </div>
       )
-    })
-  }
+    }
   return (
     <div>
       {listPlayers()}
