@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :players
 
-  scope '/api' do
-    get :player, to: 'players#index'
+  namespace :api do
+    resources :players, only: [:index]
   end
 
 end

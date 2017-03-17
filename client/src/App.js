@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
-import * as actions from './actions/playerActions.js'
-import { fetchPlayers } from './actions/playerActions.js'
+import { fetchPlayers } from  './actions/players.js'
 import PlayerList from './PlayerList'
 
 export class App extends Component {
@@ -26,7 +25,9 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return {actions: bindActionCreators(actions, dispatch)}
+  return {
+    actions: bindActionCreators({ fetchPlayers }, dispatch)
+  }
 }
 
-export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

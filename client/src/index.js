@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
-import {createStore, applyMiddleware, compose } from 'redux'
+import {createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import rootReducer from './reducers'
-import { WrapperApp } from './App'
+import reducers from './reducers'
+import App from './App'
 
+const middleWare = [thunk];
 const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-  )
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(...middleWare)
 )
 
 ReactDOM.render(
   <Provider store={store}>
-    <WrapperApp />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
