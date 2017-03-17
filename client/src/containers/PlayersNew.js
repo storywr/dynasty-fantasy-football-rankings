@@ -29,7 +29,7 @@ class PlayersNew extends Component {
 
   handleOnDescriptionChange(event) {
     this.setState({
-      description: event.target.value
+      position: event.target.value
     });
   }
 
