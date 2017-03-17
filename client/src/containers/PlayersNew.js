@@ -27,9 +27,15 @@ class PlayersNew extends Component {
     });
   }
 
-  handleOnDescriptionChange(event) {
+  handleOnPositionChange(event) {
     this.setState({
       position: event.target.value
+    });
+  }
+
+  handleOnRatingChange(event) {
+    this.setState({
+      rating: event.target.value
     });
   }
 
@@ -45,7 +51,11 @@ class PlayersNew extends Component {
           <input
             type="text"
             placeholder="Position"
-            onChange={(event) => this.handleOnDescriptionChange(event)} />
+            onChange={(event) => this.handleOnPositionChange(event)} />
+          <input
+            type="text"
+            placeholder="Rating"
+            onChange={(event) => this.handleOnRatingChange(event)} />
           <input
             type="submit"
             value="Add Player" />

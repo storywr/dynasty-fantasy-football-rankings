@@ -7,7 +7,8 @@ const PlayersShow = (props) => {
   return (
     <div>
       <h2>{player.name}</h2>
-      <p>{player.position}</p>
+      <p>Position: {player.position}</p>
+      <p>Rating: {player.rating}</p>
     </div>
   );
 };
