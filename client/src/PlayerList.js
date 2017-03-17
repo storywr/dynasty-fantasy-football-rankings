@@ -5,6 +5,8 @@ const PlayerList = (props) => {
     <div key={player.id}>
       <ul>
         <li >{player.name}</li>
+        <li >{player.position}</li>
+        <li >{player.rating}</li>
       </ul>
     </div>
   );

@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { fetchPlayers } from  './actions/players.js'
 import PlayerList from './PlayerList'
+import PlayerInput from './components/PlayerInput.js'
 
 export class App extends Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ export class App extends Component {
     return (
       <div className="App">
         <PlayerList players={this.props.players} />
+        <PlayerInput store={this.props.store} />
       </div>
     );
   }

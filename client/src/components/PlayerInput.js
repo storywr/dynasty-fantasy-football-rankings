@@ -1,47 +1,60 @@
 import React, { Component } from 'react';
+import { addPlayer } from '../actions/players';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-class PlayerInput extends Component {
+export class RestaurantInput extends Component {
 
-  constructor(props) {
+  constructor(props){
     super(props);
 
     this.state = {
-      text: ''
+      name: '', location: ''
     };
-  };
+  }
 
-  handleOnChange(event) {
+  handleOnNameChange(event) {
     this.setState({
-      text: event.target.value,
+      name: event.target.value
+    });
+  }
+
+  handleOnLocationChange(event) {
+    this.setState({
+      location: event.target.value
     });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.store.dispatch({
-      type: 'ADD_PLAYER',
-      restaurant: {
-        text: this.state.text,
-      },
-    });
-    this.setState({
-      text: ''
-    });
+    this.props.addRestaurant(this.state);
   }
 
   render() {
-    return (
-      <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)} >
+    return(
+      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <p>
           <input
             type="text"
-            value={this.state.text}
-            onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
-        </form>
-      </div>
+            onChange={(event) => this.handleOnNameChange(event)}
+            placeholder="restaurant name" />
+        </p>
+        <p>
+          <input
+            type="text"
+            onChange={(event) => this.handleOnLocationChange(event)}
+            placeholder="location" />
+        </p>
+        <input type="submit" />
+      </form>
     );
   }
 };
 
-export default PlayerInput;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addRestaurant,
+  }, dispatch);
+};
+
+export const ConnectedRestaurantInput = connect(null, mapDispatchToProps)(RestaurantInput);
