@@ -14,7 +14,7 @@ const PlayersShow = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    player: state.players.find(player => player.id == ownProps.routeParams.id)
+    player: state.players.find(player => player.id === ownProps.routeParams.id)
   };
 };
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchPlayers } from '../actions';
+import { fetchPlayers } from '../actions/players';
 import { Link } from 'react-router';
 
 class PlayersPage extends Component {
