@@ -7,6 +7,14 @@ export const fetchPlayers = () => {
   }
 }
 
+// static createPlayer(player) {
+//   const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+//   const request = new Request(`${process.env.API_HOST}/api/players`, {
+//     method: 'POST',
+//     headers: headers,
+//     body: JSON.stringify({player: player})
+//   });
+
 export function addPlayer(player){
   return {
     type: 'ADD_PLAYER',

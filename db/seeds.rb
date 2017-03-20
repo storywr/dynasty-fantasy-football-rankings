@@ -19,3 +19,5 @@ Player.create({name: "Jay Ajayi", position: "RB", team: "Miami Dolphins", positi
 Player.create({name: "Isaiah Crowell", position: "RB", team: "Cleveland Browns", positional_ranking: 8, pic: "http://www.rotoworld.com/images/headshots/NFL/9401.jpg"})
 Player.create({name: "Carlos Hyde", position: "RB", team: "San Francisco 49ers", positional_ranking: 9, pic: "http://www.rotoworld.com/images/headshots/NFL/9381.jpg"})
 Player.create({name: "Lamar Miller", position: "RB", team: "Houston Texans", positional_ranking: 10, pic: "http://www.rotoworld.com/images/headshots/NFL/7408.jpg"})
+
+Comment.create({summary: "OBJ is a freak of nature. I've never seen a player pull off some of the circus catches that he has. He is in a tier of his own and at the young age of 24, he should stay there for a long time.", player_id: 1})

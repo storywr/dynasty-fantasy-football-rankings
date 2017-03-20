@@ -24,3 +24,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 export default connect(mapStateToProps)(PlayersShow);
+
+// <li>{player.comments.map(comment =>
+//   <p>{comment.summary}</p>
+// )}</li>
