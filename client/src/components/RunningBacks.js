@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchPlayers } from '../actions/players';
 import { Link } from 'react-router';
 
-class PlayersPage extends Component {
+class RunningBacks extends Component {
 
   componentDidMount(){
     this.props.fetchPlayers();
@@ -13,27 +13,25 @@ class PlayersPage extends Component {
   render() {
     return (
       <div>
-        <div>
-        <h2>Player List</h2>
-          <ul>
-            {this.props.players.map(player =>
-              <li key={player.id}>
-                <Link to={`/players/${player.id}`}>{ player.name }</Link>
-              </li>
-            )}
-          </ul>
-          <Link to="/players/new">Add a Player</Link>
-        </div>
-        {this.props.children}
+        <h1>Running Back Page</h1>
+        {this.props.players.map((player, index) => (
+          <div key={index}>
+              <p>{player.positional_ranking}: {player.name}</p>
+          </div>
+        ))}
       </div>
     );
   }
 
 };
 
+function checkRB(player) {
+  return player.position === "RB"
+}
+
 const mapStateToProps = (state) => {
   return {
-    players: state.players
+    players: state.players.filter(checkRB)
   };
 }
 
@@ -43,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayersPage);
+export default connect(mapStateToProps, mapDispatchToProps)(RunningBacks);

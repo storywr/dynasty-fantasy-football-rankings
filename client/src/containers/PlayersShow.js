@@ -8,7 +8,7 @@ const PlayersShow = (props) => {
     <div>
       <h2>{player.name}</h2>
       <p>Position: {player.position}</p>
-      <p>Rating: {player.rating}</p>
+      <p>Positional Ranking: {player.positional_ranking}</p>
     </div>
   );
 };

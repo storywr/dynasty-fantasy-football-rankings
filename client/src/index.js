@@ -9,7 +9,8 @@ import App from './App'
 import PlayersPage from './containers/PlayersPage';
 import PlayersNew from './containers/PlayersNew';
 import PlayersShow from './containers/PlayersShow';
-
+import RunningBacks from './components/RunningBacks';
+import WideReceivers from './components/WideReceivers';
 
 const middleWare = [thunk];
 
@@ -26,6 +27,10 @@ ReactDOM.render(
         <Route path="/players" component={PlayersPage} >
           <Route path="/players/new" component={PlayersNew} />
           <Route path="/players/:id" component={PlayersShow} />
+        </Route>
+        <Route path="/rb" component={RunningBacks} >
+        </Route>
+        <Route path="/wr" component={WideReceivers} >
         </Route>
       </Route>
     </Router>

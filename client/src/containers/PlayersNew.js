@@ -54,7 +54,7 @@ class PlayersNew extends Component {
             onChange={(event) => this.handleOnPositionChange(event)} />
           <input
             type="text"
-            placeholder="Rating"
+            placeholder="Positional Ranking"
             onChange={(event) => this.handleOnRatingChange(event)} />
           <input
             type="submit"
