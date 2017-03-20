@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 const PlayersShow = (props) => {
   const player = props.player;
+  const comments = props.comments.filter(comment => comment.player_id === player.id)
 
   return (
     <div>
@@ -12,6 +13,9 @@ const PlayersShow = (props) => {
         <li>{player.team}</li>
         <li>Position: {player.position}</li>
         <li>Positional Ranking: {player.positional_ranking}</li>
+        <li>{comments.map(comment =>
+          <p>{comment.summary}</p>
+        )}</li>
       </ul>
     </div>
   );
@@ -19,12 +23,9 @@ const PlayersShow = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    player: state.players.find(player => player.id == ownProps.routeParams.id)
+    player: state.players.find(player => player.id == ownProps.routeParams.id),
+    comments: state.comments
   };
 };
 
 export default connect(mapStateToProps)(PlayersShow);
-
-// <li>{player.comments.map(comment =>
-//   <p>{comment.summary}</p>
-// )}</li>

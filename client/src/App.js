@@ -10,7 +10,8 @@ export class App extends Component {
   componentDidMount() {
     if (this.props.players.length === 0) {
       console.log('in component did mount')
-      this.props.actions.fetchPlayers()
+      this.props.actions.fetchPlayers(),
+      this.props.actions.fetchComments()
     }
   }
   render() {
@@ -31,12 +32,12 @@ export class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {players: state.players}
+  return {players: state.players, comments: state.comments}
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchPlayers }, dispatch)
+    actions: bindActionCreators({ fetchPlayers, fetchComments }, dispatch)
   }
 }
 
