@@ -11,6 +11,7 @@ import PlayersNew from './containers/PlayersNew';
 import PlayersShow from './containers/PlayersShow';
 import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
+import * as ReactBootstrap from 'react-bootstrap'
 
 const middleWare = [thunk];
 

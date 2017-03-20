@@ -8,8 +8,11 @@ const PlayersShow = (props) => {
     <div>
       <h2>{player.name}</h2>
       <img src={player.pic}/>
-      <p>Position: {player.position}</p>
-      <p>Positional Ranking: {player.positional_ranking}</p>
+      <ul>
+        <li>{player.team}</li>
+        <li>Position: {player.position}</li>
+        <li>Positional Ranking: {player.positional_ranking}</li>
+      </ul>
     </div>
   );
 };

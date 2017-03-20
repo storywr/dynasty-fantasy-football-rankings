@@ -33,6 +33,12 @@ class PlayersNew extends Component {
     });
   }
 
+  handleOnTeamChange(event) {
+    this.setState({
+      team: event.target.value
+    });
+  }
+
   handleOnRankingChange(event) {
     this.setState({
       positional_ranking: event.target.value
@@ -58,6 +64,10 @@ class PlayersNew extends Component {
             type="text"
             placeholder="Position"
             onChange={(event) => this.handleOnPositionChange(event)} />
+          <input
+            type="text"
+            placeholder="Team"
+            onChange={(event) => this.handleOnTeamChange(event)} />
           <input
             type="text"
             placeholder="Positional Ranking"

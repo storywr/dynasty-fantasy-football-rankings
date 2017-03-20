@@ -14,10 +14,10 @@ class WideReceivers extends Component {
     return (
       <div>
         <h3>Wide Receiver Rankings</h3>
-        <img src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"}/><br></br>
+        <img src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '700px', width: '1050px', margin: 'auto'}}/><br></br>
         {this.props.players.map((player, index) => (
           <div key={index}>
-              <p>{player.positional_ranking}: {player.name}</p>
+              <p>{player.positional_ranking}: <Link to={`/players/${player.id}`}>{ player.name }</Link></p>
               <img src={player.pic}/>
           </div>
         ))}

@@ -3,6 +3,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
     create_table :players do |t|
       t.string :name
       t.string :position
+      t.string :team
       t.string :pic
       t.integer :positional_ranking
       t.timestamps

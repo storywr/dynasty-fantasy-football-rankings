@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170309182216) do
   create_table "players", force: :cascade do |t|
     t.string   "name"
     t.string   "position"
+    t.string   "team"
     t.string   "pic"
     t.integer  "positional_ranking"
     t.datetime "created_at",         null: false
