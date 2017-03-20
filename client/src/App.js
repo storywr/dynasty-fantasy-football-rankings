@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { fetchPlayers } from  './actions/players.js'
-import PlayerList from './PlayerList'
 import { Link } from 'react-router';
+import {Navbar} from 'react-bootstrap'
 
 export class App extends Component {
   componentDidMount() {
@@ -15,9 +15,13 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <h3><Link to={`/rb`}>Running Back Rankings</Link></h3>
-        <h3><Link to={`/wr`}>Wide Receiver Rankings</Link></h3>
-        <h3><Link to={`/players`}>Player List</Link></h3>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="/rb">RB</a> <a href="/wr">WR</a> <a href="/players">ALL</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
         { this.props.children }
       </div>
     );
