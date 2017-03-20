@@ -7,6 +7,7 @@ const PlayersShow = (props) => {
   return (
     <div>
       <h2>{player.name}</h2>
+      <img src={player.pic}/>
       <p>Position: {player.position}</p>
       <p>Positional Ranking: {player.positional_ranking}</p>
     </div>

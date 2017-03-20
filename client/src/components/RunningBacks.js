@@ -17,6 +17,7 @@ class RunningBacks extends Component {
         {this.props.players.map((player, index) => (
           <div key={index}>
               <p>{player.positional_ranking}: {player.name}</p>
+              <img src={player.pic}/>
           </div>
         ))}
       </div>

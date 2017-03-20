@@ -33,9 +33,15 @@ class PlayersNew extends Component {
     });
   }
 
-  handleOnRatingChange(event) {
+  handleOnRankingChange(event) {
     this.setState({
-      rating: event.target.value
+      positional_ranking: event.target.value
+    });
+  }
+
+  handleOnPicChange(event) {
+    this.setState({
+      pic: event.target.value
     });
   }
 
@@ -55,7 +61,11 @@ class PlayersNew extends Component {
           <input
             type="text"
             placeholder="Positional Ranking"
-            onChange={(event) => this.handleOnRatingChange(event)} />
+            onChange={(event) => this.handleOnRankingChange(event)} />
+          <input
+            type="text"
+            placeholder="Pic URL"
+            onChange={(event) => this.handleOnPicChange(event)} />
           <input
             type="submit"
             value="Add Player" />
