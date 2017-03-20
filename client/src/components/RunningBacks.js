@@ -13,10 +13,11 @@ class RunningBacks extends Component {
   render() {
     return (
       <div>
-        <h1>Running Back Rankings</h1>
+        <h3>Running Back Rankings</h3>
+        <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"}/><br></br>
         {this.props.players.map((player, index) => (
           <div key={index}>
-              <p>{player.positional_ranking}: {player.name}</p>
+              <p>{player.positional_ranking}: <Link to={`/players/${player.id}`}>{ player.name }</Link></p>
               <img src={player.pic}/>
           </div>
         ))}

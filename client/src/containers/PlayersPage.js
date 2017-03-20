@@ -14,7 +14,7 @@ class PlayersPage extends Component {
     return (
       <div>
         <div>
-        <h2>Player List</h2>
+        <h3>Player List</h3>
           <ul>
             {this.props.players.map(player =>
               <li key={player.id}>
