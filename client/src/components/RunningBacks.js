@@ -13,7 +13,7 @@ class RunningBacks extends Component {
   render() {
     return (
       <div>
-        <h1>Running Back Page</h1>
+        <h1>Running Back Rankings</h1>
         {this.props.players.map((player, index) => (
           <div key={index}>
               <p>{player.positional_ranking}: {player.name}</p>
