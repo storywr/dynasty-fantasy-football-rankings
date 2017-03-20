@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { fetchPlayers } from  './actions/players.js'
+import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
 import {Navbar} from 'react-bootstrap'
 
