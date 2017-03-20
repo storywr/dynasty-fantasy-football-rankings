@@ -19,7 +19,7 @@ export class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <h1>Dynasty Fantasy Football</h1>
-              <a href="/rb">RB</a> <a href="/wr">WR</a> <a href="/players">ALL</a>
+              <a href="/players/rb">RB</a> <a href="/players/wr">WR</a> <a href="/players">ALL</a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
