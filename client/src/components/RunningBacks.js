@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 const RunningBacks = (props) => {
   const players = props.players;
@@ -10,7 +11,7 @@ const RunningBacks = (props) => {
       <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"}/><br></br>
         {players.map(player =>
           <div>
-            <p>{player.positional_ranking} - {player.name}</p>
+            <p>{player.positional_ranking} - <Link to={`/players/${player.id}`}>{ player.name }</Link></p>
             <img src={player.pic}/>
           </div>
         )}

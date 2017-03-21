@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 const WideReceivers = (props) => {
   const players = props.players;
@@ -10,7 +11,7 @@ const WideReceivers = (props) => {
       <img src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '700px', width: '1050px', margin: 'auto'}}/><br></br>
         {players.map(player =>
           <div>
-            <p>{player.positional_ranking} - {player.name}</p>
+            <p>{player.positional_ranking} - <Link to={`/players/${player.id}`}>{ player.name }</Link></p>
             <img src={player.pic}/>
           </div>
         )}

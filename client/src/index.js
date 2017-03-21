@@ -11,6 +11,7 @@ import PlayersNew from './containers/PlayersNew';
 import PlayersShow from './containers/PlayersShow';
 import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
+import CommentsNew from './containers/CommentsNew';
 import * as ReactBootstrap from 'react-bootstrap'
 
 const middleWare = [thunk];
@@ -29,7 +30,9 @@ ReactDOM.render(
           <Route path="/players/new" component={PlayersNew} />
           <Route path="/players/rb" component={RunningBacks} />
           <Route path="/players/wr" component={WideReceivers} />
-          <Route path="/players/:id" component={PlayersShow} />
+          <Route path="/players/:id" component={PlayersShow} >
+            <Route path="/players/:id/comments/new" component={CommentsNew} />
+          </Route>
         </Route>
       </Route>
     </Router>

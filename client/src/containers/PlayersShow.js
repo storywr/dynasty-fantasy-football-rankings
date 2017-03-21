@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 const PlayersShow = (props) => {
   const player = props.player;
@@ -9,14 +10,14 @@ const PlayersShow = (props) => {
     <div>
       <h2>{player.name}</h2>
       <img src={player.pic}/>
-      <ul>
-        <li>{player.team}</li>
-        <li>Position: {player.position}</li>
-        <li>Positional Ranking: {player.positional_ranking}</li>
-        <li>{comments.map(comment =>
-          <p>{comment.summary}</p>
-        )}</li>
-      </ul>
+      <p>Team: {player.team}</p>
+      <p>Position: {player.position}</p>
+      <p>Positional Ranking: {player.positional_ranking}</p>
+      <p>Comments:
+      <ul>{comments.map(comment =>
+        <li>{comment.summary}</li>
+      )}</ul></p>
+      <Link to="/players/${player.id}/comments/new">Add a Comment</Link>
     </div>
   );
 };

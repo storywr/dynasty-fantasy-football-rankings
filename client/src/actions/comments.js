@@ -6,3 +6,10 @@ export const fetchComments = () => {
       .catch(console.log)
   }
 }
+
+export function addPlayer(comment){
+  return {
+    type: 'ADD_COMMENT',
+    comment
+  };
+};
