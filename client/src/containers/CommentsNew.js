@@ -18,7 +18,7 @@ class CommentsNew extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.addComment(this.state);
-    browserHistory.push('/players');
+    browserHistory.push('/');
   }
 
   handleOnSummaryChange(event) {
@@ -38,7 +38,7 @@ class CommentsNew extends Component {
             onChange={(event) => this.handleOnSummaryChange(event)} />
           <input
             type="submit"
-            value="Add Player" />
+            value="Add Comment" />
         </form>
       </div>
     );

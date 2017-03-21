@@ -7,7 +7,7 @@ export const fetchComments = () => {
   }
 }
 
-export function addPlayer(comment){
+export function addComment(comment){
   return {
     type: 'ADD_COMMENT',
     comment

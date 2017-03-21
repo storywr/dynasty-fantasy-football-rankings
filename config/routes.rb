@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :comments
   resources :players do
     resources :comments, only: [:index, :show, :new, :create]
   end
