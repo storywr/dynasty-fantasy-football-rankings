@@ -18,7 +18,7 @@ class CommentsNew extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.addComment(this.state);
-    browserHistory.push('/');
+    browserHistory.push(`/players/${this.state.player_id}`);
   }
 
   handleOnSummaryChange(event) {

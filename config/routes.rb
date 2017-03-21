@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :players do
-    resources :comments, only: [:index, :show, :new, :create]
-  end
+  resources :players
 
   namespace :api do
     resources :players, only: [:index]
