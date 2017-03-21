@@ -23,6 +23,6 @@ Player.create({name: "Lamar Miller", position: "RB", team: "Houston Texans", pos
 Comment.create({summary: "OBJ is a freak of nature. I've never seen a player pull off some of the circus catches that he has. He is in a tier of his own and at the young age of 24, he should stay there for a long time.", player_id: 1})
 Comment.create({summary: "Biggest playmaker to hit the league since Deion Sanders", player_id: 1})
 Comment.create({summary: "He's become overrated in the fantasy community. If I have the first pick in a startup I'm going with Zeke", player_id: 1})
-Comment.create({summary: "Passed OBJ for the top spot this season. He is the Tampa Bay offense.", player_id: 2})
-Comment.create({summary: "Evans has looked like Megatron 2.0 for the Bucs.", player_id: 2})
+Comment.create({summary: "Passed OBJ for the top spot this season. He is the Tampa Bay offense.", player_id: 3})
+Comment.create({summary: "Evans has looked like Megatron 2.0 for the Bucs.", player_id: 3})
 Comment.create({summary: "Zeke burst onto the scene as the most exciting rookie RB since Adrian Peterson. Only 22 and rushing behind the Dallas o-line, he's my top dynasty asset for the forseeable future.", player_id: 11})

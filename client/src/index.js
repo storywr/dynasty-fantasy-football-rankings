@@ -27,13 +27,13 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App} >
         <Route path="/players" component={PlayersPage} >
-          <Route path="/players/new" component={PlayersNew} />
-          <Route path="/players/rb" component={RunningBacks} />
-          <Route path="/players/wr" component={WideReceivers} />
-          <Route path="/players/:id" component={PlayersShow} >
-            <Route path="/players/:id/comments/new" component={CommentsNew} />
-          </Route>
+        <Route path="/rb" component={RunningBacks} />
+        <Route path="/wr" component={WideReceivers} />
+        <Route path="/players/new" component={PlayersNew} />
+        <Route path="/players/:id" component={PlayersShow} >
+          <Route path="/players/:id/comments/new" component={CommentsNew} />
         </Route>
+      </Route>
       </Route>
     </Router>
   </Provider>,

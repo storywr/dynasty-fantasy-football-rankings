@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import * as ReactBootstrap from 'react-bootstrap';
 
 const PlayersShow = (props) => {
   const player = props.player;
@@ -17,7 +18,7 @@ const PlayersShow = (props) => {
       <ul>{comments.map(comment =>
         <li>{comment.summary}</li>
       )}</ul></p>
-      <Link to="/players/${player.id}/comments/new">Add a Comment</Link>
+      <Link to='/players/${player.id}/comments/new'>Add a Comment</Link>
     </div>
   );
 };
