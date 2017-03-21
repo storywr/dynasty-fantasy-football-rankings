@@ -10,7 +10,7 @@ const PlayersShow = (props) => {
   return (
     <div>
       <h2>{player.name}</h2>
-      <img src={player.pic}/>
+      <img src={player.pic}/><br></br><br></br>
       <p>Team: {player.team}</p>
       <p>Position: {player.position}</p>
       <p>Positional Ranking: {player.positional_ranking}</p>

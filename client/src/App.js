@@ -5,6 +5,7 @@ import { fetchPlayers } from  './actions/players.js'
 import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import './App.css'
 
 export class App extends Component {
   componentDidMount() {
