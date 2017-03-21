@@ -35,7 +35,7 @@ class CommentsNew extends Component {
           <input
             type="text"
             placeholder="Summary"
-            onChange={(event) => this.handleOnSummaryChange(event)} />
+            onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
           <input
             type="submit"
             value="Add Comment" />

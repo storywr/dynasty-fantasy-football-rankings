@@ -12,7 +12,10 @@ import PlayersShow from './components/PlayersShow';
 import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
 import CommentsNew from './containers/CommentsNew';
-import * as ReactBootstrap from 'react-bootstrap'
+import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const middleWare = [thunk];
 

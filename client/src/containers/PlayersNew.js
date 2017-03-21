@@ -59,23 +59,23 @@ class PlayersNew extends Component {
           <input
             type="text"
             placeholder="Name"
-            onChange={(event) => this.handleOnNameChange(event)} />
+            onChange={(event) => this.handleOnNameChange(event)} /><br></br>
           <input
             type="text"
             placeholder="Position"
-            onChange={(event) => this.handleOnPositionChange(event)} />
+            onChange={(event) => this.handleOnPositionChange(event)} /><br></br>
           <input
             type="text"
             placeholder="Team"
-            onChange={(event) => this.handleOnTeamChange(event)} />
+            onChange={(event) => this.handleOnTeamChange(event)} /><br></br>
           <input
             type="text"
             placeholder="Positional Ranking"
-            onChange={(event) => this.handleOnRankingChange(event)} />
+            onChange={(event) => this.handleOnRankingChange(event)} /><br></br>
           <input
             type="text"
             placeholder="Pic URL"
-            onChange={(event) => this.handleOnPicChange(event)} />
+            onChange={(event) => this.handleOnPicChange(event)} /><br></br><br></br>
           <input
             type="submit"
             value="Add Player" />
