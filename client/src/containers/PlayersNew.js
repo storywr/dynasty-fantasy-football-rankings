@@ -18,7 +18,7 @@ class PlayersNew extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.addPlayer(this.state);
-    browserHistory.push('/players');
+    browserHistory.push('/');
   }
 
   handleOnNameChange(event) {

@@ -14,10 +14,10 @@ const PlayersShow = (props) => {
       <p>Team: {player.team}</p>
       <p>Position: {player.position}</p>
       <p>Positional Ranking: {player.positional_ranking}</p>
-      <p>Comments:
+      <p>Comments:</p>
       <ul>{comments.map(comment =>
         <li>{comment.summary}</li>
-      )}</ul></p>
+      )}</ul>
       <Link to='/players/${player.id}/comments/new'>Add a Comment</Link>
     </div>
   );
