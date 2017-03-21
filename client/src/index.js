@@ -8,7 +8,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import App from './App'
 import PlayersPage from './components/PlayersPage';
 import PlayersNew from './containers/PlayersNew';
-import PlayersShow from './containers/PlayersShow';
+import PlayersShow from './components/PlayersShow';
 import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
 import CommentsNew from './containers/CommentsNew';

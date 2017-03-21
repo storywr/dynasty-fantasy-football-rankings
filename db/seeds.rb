@@ -1,11 +1,11 @@
 Player.create({name: "Odell Beckham Jr", position: "WR", team: "NY Giants", positional_ranking: 1, pic: "http://www.rotoworld.com/images/headshots/NFL/9403.jpg"})
+Player.create({name: "AJ Green", position: "WR", team: "Cincinnati Bengals", positional_ranking: 8, pic: "http://www.rotoworld.com/images/headshots/NFL/6438.jpg"})
 Player.create({name: "Mike Evans", position: "WR", team: "Tampa Bay Buccaneers", positional_ranking: 2, pic: "http://www.rotoworld.com/images/headshots/NFL/9296.jpg"})
 Player.create({name: "Antonio Brown", position: "WR", team: "Pittsburgh Steelers", positional_ranking: 3, pic: "http://www.rotoworld.com/images/headshots/NFL/5698.jpg"})
 Player.create({name: "Julio Jones", position: "WR", team: "Atlanta Falcons", positional_ranking: 4, pic: "http://www.rotoworld.com/images/headshots/NFL/6475.jpg"})
 Player.create({name: "Amari Cooper", position: "WR", team: "Oakland Raiders", positional_ranking: 5, pic: "http://www.rotoworld.com/images/headshots/NFL/10310.jpg"})
 Player.create({name: "Allen Robinson", position: "WR", team: "Jacksonville Jaguars", positional_ranking: 6, pic: "http://www.rotoworld.com/images/headshots/NFL/9297.jpg"})
 Player.create({name: "DeAndre Hopkins", position: "WR", team: "Houston Texans", positional_ranking: 7, pic: "http://www.rotoworld.com/images/headshots/NFL/8404.jpg"})
-Player.create({name: "AJ Green", position: "WR", team: "Cincinnati Bengals", positional_ranking: 8, pic: "http://www.rotoworld.com/images/headshots/NFL/6438.jpg"})
 Player.create({name: "TY Hilton", position: "WR", team: "Indianapolis Colts", positional_ranking: 9, pic: "http://www.rotoworld.com/images/headshots/NFL/7558.jpg"})
 Player.create({name: "Michael Thomas", position: "WR", team: "New Orleans Saints", positional_ranking: 10, pic: "http://www.rotoworld.com/images/headshots/NFL/11222.jpg"})
 
