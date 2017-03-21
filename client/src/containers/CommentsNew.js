@@ -45,10 +45,17 @@ class CommentsNew extends Component {
   }
 };
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    player: state.players.find(player => player.id == ownProps.routeParams.id),
+    comments: state.comments
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addComment: bindActionCreators(addComment, dispatch)
   };
 };
 
-export default connect(null, mapDispatchToProps)(CommentsNew);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsNew);

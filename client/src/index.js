@@ -29,9 +29,8 @@ ReactDOM.render(
         <Route path="/rb" component={RunningBacks} />
         <Route path="/wr" component={WideReceivers} />
         <Route path="/players/new" component={PlayersNew} />
-        <Route path="/players/:id" component={PlayersShow} >
-          <Route path="/players/:id/comments/new" component={CommentsNew} />
-        </Route>
+        <Route path="/players/:id" component={PlayersShow} />
+        <Route path="/players/:id/comments/new" component={CommentsNew} />
       </Route>
     </Router>
   </Provider>,
