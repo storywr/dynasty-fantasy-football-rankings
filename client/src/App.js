@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import { fetchPlayers } from  './actions/players.js'
 import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 export class App extends Component {
   componentDidMount() {
@@ -19,12 +19,15 @@ export class App extends Component {
       <div className="App">
         <Navbar>
           <Navbar.Header>
-            <h3>Dynasty Fantasy Football</h3>
             <Navbar.Brand>
-              <p><Link to="/rb">RB</Link> | <Link to="/wr">WR</Link> | <Link to="/players/new">Add a Player</Link></p>
-            <Navbar.Toggle />
+              <a href="#"><Link to="/">Dynasty Fantasy Football Rankings</Link></a>
             </Navbar.Brand>
           </Navbar.Header>
+          <Nav>
+            <NavItem eventKey={1} href="#"><Link to="/rb">RB</Link></NavItem>
+            <NavItem eventKey={2} href="#"><Link to="/wr">WR</Link></NavItem>
+            <NavItem eventKey={2} href="#"><Link to="/players/new">Add Player</Link></NavItem>
+          </Nav>
         </Navbar>
         { this.props.children }
       </div>

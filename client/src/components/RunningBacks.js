@@ -8,11 +8,11 @@ const RunningBacks = (props) => {
   return (
     <div>
       <h3>Running Back Rankings</h3>
-      <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"}/><br></br>
+      <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"}/><br></br><br></br>
         {players.map(player =>
           <div>
             <p>{player.positional_ranking} - <Link to={`/players/${player.id}`}>{ player.name }</Link></p>
-            <img src={player.pic}/>
+            <img src={player.pic}/><br></br><br></br>
           </div>
         )}
     </div>

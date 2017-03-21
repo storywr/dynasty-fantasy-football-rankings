@@ -30,7 +30,7 @@ class CommentsNew extends Component {
   render() {
     return (
       <div>
-        <h2>Add a Comment</h2>
+        <h3>Add a Comment</h3>
         <form onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"

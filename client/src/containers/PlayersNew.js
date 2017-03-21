@@ -54,7 +54,7 @@ class PlayersNew extends Component {
   render() {
     return (
       <div>
-        <h2>Add a Player</h2>
+        <h3>Add a Player</h3>
         <form onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"

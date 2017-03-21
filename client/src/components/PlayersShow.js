@@ -18,7 +18,7 @@ const PlayersShow = (props) => {
       <ul>{comments.map(comment =>
         <li>{comment.summary}</li>
       )}</ul>
-      <Link to={`/players/${player.id}/comments/new`}>Add a Comment</Link>
+      <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link>
     </div>
   );
 };
