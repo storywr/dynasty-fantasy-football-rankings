@@ -14,7 +14,7 @@ const PlayersShow = (props) => {
       <img src={player.pic}/><br></br><br></br>
       <p>Position: {player.position}</p>
       <p>Positional Ranking: {player.positional_ranking}</p>
-      <h4>Comments:</h4>
+      <h5>Comments:</h5>
       <ul>{comments.map(comment =>
         <li>{comment.summary}</li>
       )}</ul>

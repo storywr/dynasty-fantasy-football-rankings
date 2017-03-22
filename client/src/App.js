@@ -6,7 +6,8 @@ import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Jumbotron, Button } from 'react-bootstrap';
 import './App.css'
-import styles from './App.css'
+// import styles from './App.css'
+//  in Navbar - className={styles.navbar}
 
 export class App extends Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar className={styles.navbar}>
+        <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#"><Link to="/">Dynasty Fantasy Football Rankings</Link></a>
