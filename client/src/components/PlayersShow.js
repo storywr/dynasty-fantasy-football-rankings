@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
+import { PageHeader } from 'react-bootstrap';
 
 const PlayersShow = (props) => {
   const player = props.player;
@@ -9,12 +10,11 @@ const PlayersShow = (props) => {
 
   return (
     <div>
-      <h2>{player.name}</h2>
+      <PageHeader>{player.name} <small>{player.team}</small></PageHeader>
       <img src={player.pic}/><br></br><br></br>
-      <p>Team: {player.team}</p>
       <p>Position: {player.position}</p>
       <p>Positional Ranking: {player.positional_ranking}</p>
-      <p>Comments:</p>
+      <h4>Comments:</h4>
       <ul>{comments.map(comment =>
         <li>{comment.summary}</li>
       )}</ul>
