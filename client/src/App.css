@@ -1,10 +1,13 @@
 .App {
   text-align: left;
   padding: 20px;
+  background-color: rgb(30, 30, 30);
+  color: Gainsboro;
 }
 
-.nav {
-  text-align: left;
+:local(.navbar) {
+  color: white;
+  background: transparent !important;
 }
 
 .App-logo {
