@@ -29,7 +29,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
       <Route path="/" component={App} >
         <Route path="/rb" component={RunningBacks} />
         <Route path="/wr" component={WideReceivers} />
