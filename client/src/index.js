@@ -13,6 +13,7 @@ import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
 import Quarterbacks from './components/Quarterbacks';
 import TightEnds from './components/TightEnds';
+import ADP from './components/ADP';
 import CommentsNew from './containers/CommentsNew';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import './index.css';
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path="/wr" component={WideReceivers} />
         <Route path="/qb" component={Quarterbacks} />
         <Route path="/te" component={TightEnds} />
+        <Route path="/adp" component={ADP} />
         <Route path="/players/new" component={PlayersNew} />
         <Route path="/players/:id" component={PlayersShow} />
         <Route path="/players/:id/comments/new" component={CommentsNew} />
