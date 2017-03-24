@@ -34,15 +34,16 @@ export const fetchPlayers = () => {
 // }
 
 export function addPlayer(player) {
-  const request = new Request('/api/players', {
+  const request = {
     method: 'POST',
-    mode: 'no-cors',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({player: player})
-  });
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ player })
+  };
 
   return dispatch => {
-    return fetch(request)
+    return fetch('/api/players', request)
       .then(response => response.json())
       .then(player => dispatch({ type: 'ADD_PLAYER', player }))
       .catch(console.log)

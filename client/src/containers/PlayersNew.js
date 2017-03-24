@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addPlayer } from '../actions/players';
+import { fetchPlayers } from '../actions/players';
 import { browserHistory } from 'react-router';
 
 class PlayersNew extends Component {
@@ -17,8 +18,9 @@ class PlayersNew extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-    this.props.addPlayer(this.state);
+    this.props.actions.addPlayer(this.state);
     browserHistory.push(`/${this.state.position}`);
+    this.props.actions.fetchPlayers();
   }
 
   handleOnNameChange(event) {
@@ -87,7 +89,7 @@ class PlayersNew extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addPlayer: bindActionCreators(addPlayer, dispatch)
+    actions: bindActionCreators({ addPlayer, fetchPlayers }, dispatch)
   };
 };
 
