@@ -1,6 +1,9 @@
 .App {
   text-align: left;
   padding: 20px;
+  background-color: rgb(25, 25, 29);
+  color: ghostwhite;
+  height: 100vh;
 }
 
 .navbar {

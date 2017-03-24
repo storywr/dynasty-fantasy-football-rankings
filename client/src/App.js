@@ -6,8 +6,7 @@ import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import './App.css'
-// import styles from './App.css'
-//  in Navbar - className={styles.navbar}
+import styles from './App.css'
 
 export class App extends Component {
   componentDidMount() {
