@@ -20,9 +20,9 @@ class CommentsNew extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.actions.addComment(this.state);
-    this.props.actions.fetchComments();
+    this.props.actions.fetchComments()
     browserHistory.push(`/players/${this.state.player_id}`);
-    this.props.actions.fetchComments();
+    this.props.actions.fetchComments()
   }
 
   handleOnSummaryChange(event) {
@@ -37,7 +37,8 @@ class CommentsNew extends Component {
         <h3>Add a Comment</h3>
         <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
-            type="text"
+            type="textarea"
+            className="summaryBox"
             placeholder="Summary"
             onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
           <input
