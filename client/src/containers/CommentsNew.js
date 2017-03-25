@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addComment } from '../actions/comments';
+import { fetchComments } from  '../actions/comments.js'
 import { browserHistory } from 'react-router';
 
 class CommentsNew extends Component {
@@ -17,8 +18,9 @@ class CommentsNew extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-    this.props.addComment(this.state);
+    this.props.actions.addComment(this.state);
     browserHistory.push(`/players/${this.state.player_id}`);
+    this.props.actions.fetchComments();
   }
 
   handleOnSummaryChange(event) {
@@ -54,7 +56,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addComment: bindActionCreators(addComment, dispatch)
+    actions: bindActionCreators({ addComment, fetchComments }, dispatch)
   };
 };
 
