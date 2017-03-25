@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+.myForm {
+  color: black;
+}
+
 .navbar {
   background: transparent !important;
 }

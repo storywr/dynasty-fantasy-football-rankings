@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { addPlayer } from '../actions/players';
 import { fetchPlayers } from '../actions/players';
 import { browserHistory } from 'react-router';
+import '../App.css'
 
 class PlayersNew extends Component {
 
@@ -58,7 +59,7 @@ class PlayersNew extends Component {
     return (
       <div>
         <h3>Add a Player</h3>
-        <form onSubmit={(event) => this.handleOnSubmit(event)} >
+        <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"
             placeholder="Name"

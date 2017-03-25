@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { addComment } from '../actions/comments';
 import { fetchComments } from  '../actions/comments.js'
 import { browserHistory } from 'react-router';
+import '../App.css'
 
 class CommentsNew extends Component {
 
@@ -34,7 +35,7 @@ class CommentsNew extends Component {
     return (
       <div>
         <h3>Add a Comment</h3>
-        <form onSubmit={(event) => this.handleOnSubmit(event)} >
+        <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"
             placeholder="Summary"
