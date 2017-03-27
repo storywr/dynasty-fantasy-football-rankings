@@ -11,8 +11,8 @@ const ADP = (props) => {
   return (
     <div>
       <PageHeader>ADP <small>Check the Market</small></PageHeader>
-      <ul>{adp.map(player =>
-        <li>{player}</li>
+      <ul>{mflplayers.map(player =>
+        <li>{player.name}</li>
       )}</ul>
     </div>
   );
@@ -20,7 +20,7 @@ const ADP = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    mflplayers: state.mflplayers,
+    mflplayers: state.mflplayers.players.player,
     adp: state.adp
   };
 };

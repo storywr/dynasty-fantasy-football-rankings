@@ -1,0 +1,2 @@
+class Mflplayer < ApplicationRecord
+end
