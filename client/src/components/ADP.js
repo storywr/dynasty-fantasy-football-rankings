@@ -20,7 +20,7 @@ const ADP = (props) => {
       return hash[key];
   });
 
-  var a3 = a3.filter(player => player.averagePick > 0)
+  a3 = a3.filter(player => player.averagePick > 0)
 
   a3.sort(function(a, b){
     return a.averagePick - b.averagePick
@@ -28,7 +28,7 @@ const ADP = (props) => {
 
   a3.forEach(player => {
     var fullName = player.name
-    var fullName = fullName.split(',');
+    fullName = fullName.split(',');
     var lastName = fullName[0]
     var firstName = fullName[1]
     player.name = firstName.concat(" ")
@@ -39,7 +39,7 @@ const ADP = (props) => {
     <div className="adp">
       <PageHeader>ADP <small>Check the Market</small></PageHeader>
       <ol>{a3.map(player =>
-        <li>{player.name}</li>
+        <li>{player.name} - {player.position}</li>
       )}</ol>
     </div>
   );
