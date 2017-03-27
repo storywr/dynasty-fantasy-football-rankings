@@ -26,6 +26,15 @@ const ADP = (props) => {
     return a.averagePick - b.averagePick
   })
 
+  a3.forEach(player => {
+    var fullName = player.name
+    var fullName = fullName.split(',');
+    var lastName = fullName[0]
+    var firstName = fullName[1]
+    player.name = firstName.concat(" ")
+    player.name = player.name.concat(lastName)
+  })
+
   return (
     <div className="adp">
       <PageHeader>ADP <small>Check the Market</small></PageHeader>
