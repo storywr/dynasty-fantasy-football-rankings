@@ -1,4 +1,4 @@
-class AdpsController < ApplicationController
+class Api::AdpsController < ApplicationController
 
   def index
     @adp = Adp.all
