@@ -21,7 +21,7 @@ class PlayersNew extends Component {
     console.log(this.state);
     this.props.actions.addPlayer(this.state);
     this.props.actions.fetchPlayers();
-    browserHistory.push(`/${this.state.position}`);
+    browserHistory.push(`/`);
     this.props.actions.fetchPlayers();
   }
 
