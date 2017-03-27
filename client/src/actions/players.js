@@ -50,6 +50,23 @@ export function addPlayer(player) {
   }
 }
 
+export function updateRanking(player) {
+  const request = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ player })
+  };
+
+  return dispatch => {
+    return fetch('/api/players', request)
+      .then(response => response.json())
+      .then(player => dispatch({ type: 'UPDATE_RANKING', player }))
+      .catch(console.log)
+  }
+}
+
 // export function addPlayer(player){
 //   return {
 //     type: 'ADD_PLAYER',

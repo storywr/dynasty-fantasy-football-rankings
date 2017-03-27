@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
+import { updateRanking } from  '../actions/players.js'
+import { bindActionCreators } from 'redux';
 
 class PlayersShow extends Component {
 
@@ -18,6 +20,7 @@ class PlayersShow extends Component {
     this.setState({
       player: this.state.player
     })
+    this.props.actions.updateRanking(this.state.player)
   }
 
   render() {
@@ -48,4 +51,10 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(PlayersShow);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators({ updateRanking }, dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayersShow);
