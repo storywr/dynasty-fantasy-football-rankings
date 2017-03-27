@@ -1,0 +1,2 @@
+class AdpsController < ApplicationController
+end

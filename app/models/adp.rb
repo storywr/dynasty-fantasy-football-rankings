@@ -1,0 +1,2 @@
+class Adp < ApplicationRecord
+end

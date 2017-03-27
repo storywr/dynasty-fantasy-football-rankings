@@ -3,17 +3,35 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
+import '../App.css'
 
 const ADP = (props) => {
+
   const mflplayers = props.mflplayers;
   const adp = props.adp;
 
+  var hash = Object.create(null);
+
+  mflplayers.concat(adp).forEach(function(obj) {
+      hash[obj.id] = Object.assign(hash[obj.id] || {}, obj);
+  });
+
+  var a3 = Object.keys(hash).map(function(key) {
+      return hash[key];
+  });
+
+  var a3 = a3.filter(player => player.averagePick > 0)
+
+  a3.sort(function(a, b){
+    return a.averagePick - b.averagePick
+  })
+
   return (
-    <div>
+    <div className="adp">
       <PageHeader>ADP <small>Check the Market</small></PageHeader>
-      <ul>{mflplayers.map(player =>
+      <ol>{a3.map(player =>
         <li>{player.name}</li>
-      )}</ul>
+      )}</ol>
     </div>
   );
 };
@@ -21,7 +39,7 @@ const ADP = (props) => {
 const mapStateToProps = (state) => {
   return {
     mflplayers: state.mflplayers.players.player,
-    adp: state.adp
+    adp: state.adp.adp.player
   };
 };
 

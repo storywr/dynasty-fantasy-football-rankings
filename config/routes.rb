@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :adps
   resources :mflplayers
   resources :players
   

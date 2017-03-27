@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { fetchPlayers } from  './actions/players.js'
 import { fetchMyFantasyLeaguePlayers } from  './actions/mflplayers.js'
-import { fetchMyFantasyLeagueADP } from  './actions/players.js'
+import { fetchMyFantasyLeagueADP } from  './actions/adp.js'
 import { fetchComments } from  './actions/comments.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
@@ -16,7 +16,7 @@ export class App extends Component {
       console.log('in component did mount')
       this.props.actions.fetchPlayers(),
       this.props.actions.fetchMyFantasyLeaguePlayers(),
-      // this.props.actions.fetchMyFantasyLeagueADP(),
+      this.props.actions.fetchMyFantasyLeagueADP(),
       this.props.actions.fetchComments()
     }
   }
