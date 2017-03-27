@@ -34,7 +34,6 @@ export class App extends Component {
             <NavItem eventKey={2} href="#"><Link to="/wr">WR</Link></NavItem>
             <NavItem eventKey={3} href="#"><Link to="/qb">QB</Link></NavItem>
             <NavItem eventKey={4} href="#"><Link to="/te">TE</Link></NavItem>
-            <NavItem eventKey={4} href="#"><Link to="/adp">ADP</Link></NavItem>
             <NavItem eventKey={5} href="#"><Link to="/players/new">Add Player</Link></NavItem>
           </Nav>
         </Navbar>
