@@ -10,10 +10,16 @@ class Api::PlayersController < ApplicationController
     @player = Player.create(player_params)
   end
 
+  def update
+    @player = Player.find(player_params[:id])
+    @player.update(player_params)
+    redirect_to player_path(@player)
+  end
+
   private
 
   def player_params
-    params.require(:player).permit(:name, :position, :team, :pic, :positional_ranking)
+    params.require(:player).permit(:name, :position, :team, :pic, :positional_ranking, :id)
   end
 
 end

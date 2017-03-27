@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import { updateRanking } from  '../actions/players.js'
+import { fetchplayers } from  '../actions/players.js'
 import { bindActionCreators } from 'redux';
 import '../App.css'
 
@@ -22,6 +23,7 @@ class PlayersShow extends Component {
       player: this.state.player
     })
     this.props.actions.updateRanking(this.state.player)
+    this.props.actions.fetchPlayers()
   }
 
   handlePlusOnClick(event) {
@@ -30,6 +32,7 @@ class PlayersShow extends Component {
       player: this.state.player
     })
     this.props.actions.updateRanking(this.state.player)
+    this.props.actions.fetchPlayers()
   }
 
   render() {
@@ -63,7 +66,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchplayers }, dispatch)
   };
 };
 

@@ -4,8 +4,8 @@ export default function playersReducer(state = [], action) {
       return action.players
     case 'UPDATE_RANKING':
       const updatedPlayers = state.map(player => {
-        if(player.id === action.id){
-          return { ...player, ...action.players }
+        if(player.id === action.player.id){
+          return { ...player, ...action.player }
         }
         return player
       })
