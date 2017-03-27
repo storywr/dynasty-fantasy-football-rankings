@@ -5,6 +5,7 @@ import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import { updateRanking } from  '../actions/players.js'
 import { bindActionCreators } from 'redux';
+import '../App.css'
 
 class PlayersShow extends Component {
 
@@ -15,8 +16,16 @@ class PlayersShow extends Component {
     };
   }
 
-  handleOnClick(event) {
+  handleMinusOnClick(event) {
     this.state.player.positional_ranking--
+    this.setState({
+      player: this.state.player
+    })
+    this.props.actions.updateRanking(this.state.player)
+  }
+
+  handlePlusOnClick(event) {
+    this.state.player.positional_ranking++
     this.setState({
       player: this.state.player
     })
@@ -37,8 +46,9 @@ class PlayersShow extends Component {
         <ul>{comments.map(comment =>
           <li>{comment.summary}</li>
         )}</ul>
-        <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link>
-        <button onClick={(event) => this.handleOnClick(event)} type="button">Lower Positional Rank</button>
+        <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+        <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Increase Positional Rank</button><br></br><br></br>
+        <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">Lower Positional Rank</button>
       </div>
     );
   }
