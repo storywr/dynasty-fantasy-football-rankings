@@ -11,8 +11,12 @@ class Api::PlayersController < ApplicationController
   end
 
   def update
-    @player = Player.find(player_params[:id])
-    @player.update(player_params)
+    if player_params[:id] != nil
+      @player = Player.find(player_params[:id])
+      @player.update(player_params)
+    else
+      @player = Player.create(player_params)
+    end
   end
 
   private
