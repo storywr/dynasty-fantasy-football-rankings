@@ -50,7 +50,7 @@ class PlayersShow extends Component {
           <li>{comment.summary}</li>
         )}</ul>
         <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
-        <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Increase Positional Rank</button><br></br><br></br>
+        <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Raise Positional Rank</button><br></br><br></br>
         <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">Lower Positional Rank</button>
       </div>
     );
