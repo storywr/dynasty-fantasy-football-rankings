@@ -18,8 +18,8 @@ class TightEnds extends Component {
     const players = this.state.players;
     return (
       <div>
-        <PageHeader>Running Back Rankings <small>The Return of the Workhorse</small></PageHeader>
-        <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"} style={{height: '600', width: '900px', margin: 'auto'}}/><br></br><br></br>
+        <PageHeader>Tight End Rankings <small>Gronk Smash</small></PageHeader>
+        <img src={"https://static01.nyt.com/images/2015/01/21/sports/21patriots/21patriots-master1050.jpg"} style={{height: '600', width: '900px', margin: 'auto'}}/><br></br><br></br>
           <Carousel>
             {players.map(player =>
               <Carousel.Item>

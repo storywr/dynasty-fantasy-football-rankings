@@ -18,8 +18,8 @@ class WideReceivers extends Component {
     const players = this.state.players;
     return (
       <div>
-        <PageHeader>Running Back Rankings <small>The Return of the Workhorse</small></PageHeader>
-        <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"} style={{height: '600', width: '900px', margin: 'auto'}}/><br></br><br></br>
+        <PageHeader>Wide Receiver Rankings <small>Straight Cash Homie</small></PageHeader>
+        <img src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '600', width: '900px', margin: 'auto'}}/><br></br><br></br>
           <Carousel>
             {players.map(player =>
               <Carousel.Item>
