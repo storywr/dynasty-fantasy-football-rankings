@@ -1,0 +1,20 @@
+.positionpic {
+  float: left;
+}
+
+.adpdata {
+  float: right;
+  width: 45%;
+  column-count: 2;
+  font-size: 115%;
+}
+
+.header1 {
+  float: left;
+  width: 55%;
+}
+
+.header2 {
+  float: right;
+  width: 45%;
+}
