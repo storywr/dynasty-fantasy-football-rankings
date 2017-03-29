@@ -1,10 +1,10 @@
 .positionpic {
   float: left;
+  width: 50%;
 }
 
 .adpdata {
-  margin-top: 18px;
-  float: right;
+  float: top-right;
   width: 50%;
   column-count: 2;
   font-size: 120%;
@@ -21,6 +21,5 @@
 }
 
 .carousel {
-  margin-top: -20px;
-  top: 50px;
+  margin-top: 65px;
 }
