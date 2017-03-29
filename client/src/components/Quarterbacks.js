@@ -28,17 +28,17 @@ class Quarterbacks extends Component {
         hash[obj.id] = Object.assign(hash[obj.id] || {}, obj);
     });
 
-    var a3 = Object.keys(hash).map(function(key) {
+    var rankedPlayers = Object.keys(hash).map(function(key) {
         return hash[key];
     });
 
-    a3 = a3.filter(player => player.averagePick > 0)
+    rankedPlayers = rankedPlayers.filter(player => player.averagePick > 0)
 
-    a3.sort(function(a, b){
+    rankedPlayers.sort(function(a, b){
       return a.averagePick - b.averagePick
     })
 
-    a3.forEach(player => {
+    rankedPlayers.forEach(player => {
       var fullName = player.name
       fullName = fullName.split(',');
       var lastName = fullName[0]
@@ -51,9 +51,9 @@ class Quarterbacks extends Component {
       return player.position === "QB"
     }
 
-    a3 = a3.filter(checkMflQB)
+    rankedPlayers = rankedPlayers.filter(checkMflQB)
 
-    const topQB = a3.slice(0, 40)
+    const topQB = rankedPlayers.slice(0, 40)
 
     return (
       <div>
