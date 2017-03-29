@@ -60,7 +60,7 @@ class RunningBacks extends Component {
         <PageHeader className="header1">Running Back Rankings <small>The Return of the Workhorse</small></PageHeader>
         <PageHeader className="header2">ADP <small>Check the Market</small></PageHeader>
         <div className="positionpic">
-          <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"} style={{height: '600', width: '900px', margin: 'auto'}}/><br></br><br></br>
+          <img src={"https://static01.nyt.com/images/2015/10/16/sports/16FALCONSweb2/16FALCONSweb2-master1050.jpg"} style={{height: '500', width: '750', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="adpdata">
           <tr>

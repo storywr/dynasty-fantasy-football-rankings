@@ -3,18 +3,24 @@
 }
 
 .adpdata {
+  margin-top: 18px;
   float: right;
-  width: 45%;
+  width: 50%;
   column-count: 2;
-  font-size: 115%;
+  font-size: 120%;
 }
 
 .header1 {
   float: left;
-  width: 55%;
+  width: 50%;
 }
 
 .header2 {
   float: right;
-  width: 45%;
+  width: 50%;
+}
+
+.carousel {
+  margin-top: -20px;
+  top: 50px;
 }
