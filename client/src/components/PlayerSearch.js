@@ -1,11 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
+import { updateRanking } from  '../actions/players.js'
+import { fetchplayers } from  '../actions/players.js'
 import { bindActionCreators } from 'redux';
 import '../App.css'
 
 class PlayerSearch extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      player: props.player
+    };
+  }
+
+  handleMinusOnClick(event) {
+    this.state.player.positional_ranking--
+    this.setState({
+      player: this.state.player
+    })
+    this.props.actions.updateRanking(this.state.player)
+    this.props.actions.fetchPlayers()
+  }
+
+  handlePlusOnClick(event) {
+    this.state.player.positional_ranking++
+    this.setState({
+      player: this.state.player
+    })
+    this.props.actions.updateRanking(this.state.player)
+    this.props.actions.fetchPlayers()
+  }
+
 
   render() {
     const player = this.props.player;
@@ -48,4 +77,11 @@ function searchPlayers(player, ownProps) {
   }
 }
 
-export default connect(mapStateToProps)(PlayerSearch);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators({ updateRanking, fetchplayers }, dispatch)
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerSearch);
