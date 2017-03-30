@@ -6,21 +6,9 @@ import '../Positions.css'
 
 class Quarterbacks extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      players: props.players.sort(function(a, b){
-        return a.positional_ranking - b.positional_ranking
-      }),
-      mflplayers: props.mflplayers,
-      adp: props.adp
-    };
-  }
-
   render() {
-    const players = this.state.players;
-    const mflplayers = this.state.mflplayers;
-    const adp = this.state.adp;
+    const mflplayers = this.props.mflplayers;
+    const adp = this.props.adp;
 
     var hash = Object.create(null);
 
@@ -71,7 +59,7 @@ class Quarterbacks extends Component {
         </div>
         <div className="players">
           <Carousel className="carousel">
-            {players.map(player =>
+            {this.props.players.map(player =>
               <Carousel.Item>
                 <img width={100} height={135} alt="500x150" src={player.pic}/>
                 <Carousel.Caption>
@@ -92,7 +80,9 @@ function checkQB(player) {
 
 const mapStateToProps = (state) => {
   return {
-    players: state.players.filter(checkQB),
+    players: state.players.filter(checkQB).sort(function(a, b){
+      return a.positional_ranking - b.positional_ranking
+    }),
     mflplayers: state.mflplayers.players.player,
     adp: state.adp.adp.player
   };
