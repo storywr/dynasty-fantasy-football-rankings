@@ -52,8 +52,8 @@ class TightEnds extends Component {
         </div>
         <div className="adpdata">
           <tr>
-            <th><ol>{topTE.map(player =>
-              <li>{player.name}</li>
+            <th><ol>{topTE.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name}`}><li>{mflplayer.name}</li></Link>
             )}</ol></th>
           </tr>
         </div>

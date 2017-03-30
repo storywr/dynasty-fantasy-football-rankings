@@ -6,9 +6,9 @@ import thunk from 'redux-thunk'
 import reducers from './reducers'
 import { Router, Route, browserHistory } from 'react-router';
 import App from './App'
-import PlayersPage from './components/PlayersPage';
 import PlayersNew from './containers/PlayersNew';
 import PlayersShow from './components/PlayersShow';
+import PlayerSearch from './components/PlayerSearch';
 import RunningBacks from './components/RunningBacks';
 import WideReceivers from './components/WideReceivers';
 import Quarterbacks from './components/Quarterbacks';
@@ -38,6 +38,7 @@ ReactDOM.render(
         <Route path="/te" component={TightEnds} />
         <Route path="/adp" component={ADP} />
         <Route path="/players/new" component={PlayersNew} />
+        <Route path="/player/:name" component={PlayerSearch} />
         <Route path="/players/:id" component={PlayersShow} />
         <Route path="/players/:id/comments/new" component={CommentsNew} />
       </Route>

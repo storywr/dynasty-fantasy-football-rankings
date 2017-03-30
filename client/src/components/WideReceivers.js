@@ -52,8 +52,8 @@ class WideReceivers extends Component {
         </div>
         <div className="adpdata">
           <tr>
-            <th><ol>{topWR.map(player =>
-              <li>{player.name}</li>
+            <th><ol>{topWR.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name}`}><li>{mflplayer.name}</li></Link>
             )}</ol></th>
           </tr>
         </div>

@@ -52,8 +52,8 @@ class Quarterbacks extends Component {
         </div>
         <div className="adpdata">
           <tr>
-            <th><ol>{topQB.map(player =>
-              <li>{player.name}</li>
+            <th><ol>{topQB.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name}`}><li>{mflplayer.name}</li></Link>
             )}</ol></th>
           </tr>
         </div>

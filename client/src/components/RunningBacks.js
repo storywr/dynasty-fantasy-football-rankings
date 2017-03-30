@@ -52,8 +52,8 @@ class RunningBacks extends Component {
         </div>
         <div className="adpdata">
           <tr>
-            <th><ol>{topRB.map(player =>
-              <li>{player.name}</li>
+            <th><ol>{topRB.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name}`}><li>{mflplayer.name}</li></Link>
             )}</ol></th>
           </tr>
         </div>
