@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406175414) do
+ActiveRecord::Schema.define(version: 20170406203905) do
 
   create_table "adps", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(version: 20170406175414) do
     t.integer  "positional_ranking"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

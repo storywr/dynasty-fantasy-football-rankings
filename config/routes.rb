@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :rosters
   resources :leagues
   namespace :api do
     post '/players/', to: 'players#update'
