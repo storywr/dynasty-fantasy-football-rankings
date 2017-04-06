@@ -15,11 +15,21 @@
   width: 50%;
 }
 
+.positionheader {
+  float: left;
+  width: 100%;
+}
+
 .header2 {
   float: right;
   width: 50%;
 }
 
 .carousel {
-  margin-top: 65px;
+  position: relative;
+  margin-top: 25px;
+}
+
+.positioncarousel {
+  margin-top: 150px;
 }

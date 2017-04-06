@@ -1,4 +1,4 @@
-To Set Up:
+To Get Started:
 
 bundle && cd client && npm i
 
