@@ -8,11 +8,17 @@ import '../App.css'
 class RosterShow extends Component {
 
   render() {
+    const mflplayers = this.props.mflplayers;
+    const rosterplayers = this.props.roster.player;
+
+    rosterplayers.forEach(player => {
+      player.name = mflplayers.find(mflplayer => mflplayer.id == player.id)
+    })
 
     return (
       <div>
-        <ul>{this.props.roster.player.map(player =>
-          <li>{player.id}</li>
+        <ul>{rosterplayers.map(player =>
+          <li>{player.name.name}</li>
         )}</ul>
       </div>
     );
@@ -21,6 +27,7 @@ class RosterShow extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    mflplayers: state.mflplayers.players.player,
     roster: state.rosters.rosters.franchise.find(roster => roster.id == ownProps.routeParams.id)
   };
 };
