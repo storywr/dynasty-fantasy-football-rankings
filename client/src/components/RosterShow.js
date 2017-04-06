@@ -15,10 +15,19 @@ class RosterShow extends Component {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id)
     })
 
+    rosterplayers.forEach(player => {
+      var fullName = player.name.name
+      fullName = fullName.split(',');
+      var lastName = fullName[0]
+      var firstName = fullName[1]
+      player.name.name = firstName.concat(" ")
+      player.name.name = player.name.name.concat(lastName)
+    })
+
     return (
       <div>
         <ul>{rosterplayers.map(player =>
-          <li>{player.name.name}</li>
+          <Link to={`/player/${player.name.name}`}><li>{player.name.name}</li></Link>
         )}</ul>
       </div>
     );
