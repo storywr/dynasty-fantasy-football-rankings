@@ -15,14 +15,14 @@ class RosterShow extends Component {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id)
     })
 
-    rosterplayers.forEach(player => {
-      var fullName = player.name.name
-      fullName = fullName.split(',');
-      var lastName = fullName[0]
-      var firstName = fullName[1]
-      player.name.name = firstName.concat(" ")
-      player.name.name = player.name.name.concat(lastName)
-    })
+    // rosterplayers.forEach(player => {
+    //   var fullName = player.name.name
+    //   fullName = fullName.split(',');
+    //   var lastName = fullName[0]
+    //   var firstName = fullName[1]
+    //   player.name.name = firstName.concat(" ")
+    //   player.name.name = player.name.name.concat(lastName)
+    // })
 
     function checkQB(player) {
       return player.name.position === "QB"

@@ -8,6 +8,7 @@
   width: 50%;
   column-count: 2;
   font-size: 120%;
+  background-color: rgb(27, 27, 31);
 }
 
 .header1 {
@@ -28,6 +29,7 @@
 .carousel {
   position: relative;
   margin-top: 25px;
+  background-color: rgb(27, 27, 31);
 }
 
 .positioncarousel {
