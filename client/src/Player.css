@@ -1,0 +1,10 @@
+.comments {
+  float: top-left;
+  width: 95%;
+}
+
+.playercard {
+  background-color: rgb(23, 23, 27);
+  width: 40%;
+  border:4px solid rgb(21, 21, 24);
+}

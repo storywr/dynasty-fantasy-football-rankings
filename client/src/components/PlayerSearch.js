@@ -7,6 +7,7 @@ import { updateRanking } from  '../actions/players.js'
 import { fetchplayers } from  '../actions/players.js'
 import { bindActionCreators } from 'redux';
 import '../App.css'
+import '../Player.css'
 
 class PlayerSearch extends Component {
 
@@ -43,16 +44,16 @@ class PlayerSearch extends Component {
     return (
       <div>
         <PageHeader>{player.name} <small>{player.team}</small></PageHeader>
-        <img src={player.pic}/><br></br><br></br>
-        <p>Position: {player.position}</p>
-        <p>Positional Ranking: {player.positional_ranking}</p>
-        <h5>Comments:</h5>
-        <ul>{comments.map(comment =>
-          <li>{comment.summary}</li>
-        )}</ul>
-        <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
-        <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Raise Positional Rank</button><br></br><br></br>
-        <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">Lower Positional Rank</button>
+        <div className="playercard">
+          <img src={player.pic}/><br></br><br></br>
+          <h4>{player.position} #{player.positional_ranking}</h4>
+          <ul className="comments">{comments.map(comment =>
+            <li>{comment.summary}</li>
+          )}</ul>
+          <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+          <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Raise Positional Rank</button><br></br><br></br>
+          <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">Lower Positional Rank</button>
+        </div>
       </div>
     );
   }

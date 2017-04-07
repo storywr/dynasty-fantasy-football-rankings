@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
+import '../Roster.css'
 
 class RosterShow extends Component {
 
@@ -55,7 +56,7 @@ class RosterShow extends Component {
     var pks = rosterplayers.filter(checkPK)
 
     return (
-      <div>
+      <div className="roster">
         <div className="qbs">
         <h4>Quarterbacks</h4>
           <p>{qbs.map(player =>
