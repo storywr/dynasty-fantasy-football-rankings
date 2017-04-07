@@ -1,6 +1,6 @@
-export const fetchMyLeague = (LeagueID) => {
+export const fetchMyLeague = () => {
   return dispatch => {
-    return fetch(`http://www77.myfantasyleague.com/2017/export?TYPE=league&L=${LeagueID}&W=&JSON=1`)
+    return fetch('/api/league')
       .then(response => response.json())
       .then(league => dispatch({ type: 'LOAD_LEAGUE_SUCCESS', league }))
       .catch(console.log)

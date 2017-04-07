@@ -25,6 +25,9 @@ export class App extends Component {
     if (this.props.comments.length === 0) {
       this.props.actions.fetchComments()
     }
+    if (this.props.league.length === 0) {
+      this.props.actions.fetchMyLeague()
+    }
   }
   render() {
     return (
@@ -41,7 +44,6 @@ export class App extends Component {
             <NavItem eventKey={3} href="#"><Link to="/qb">QB</Link></NavItem>
             <NavItem eventKey={4} href="#"><Link to="/te">TE</Link></NavItem>
             <NavItem eventKey={5} href="#"><Link to="/adp">ADP</Link></NavItem>
-            <NavItem eventKey={5} href="#"><Link to="/findleague">LeagueSearch</Link></NavItem>
             <NavItem eventKey={5} href="#"><Link to="/league">League</Link></NavItem>
             <NavItem eventKey={6} href="#"><Link to="/players/new">Add Player</Link></NavItem>
           </Nav>
@@ -58,7 +60,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP}, dispatch)
+    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP, fetchMyLeague}, dispatch)
   }
 }
 
