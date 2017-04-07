@@ -43,3 +43,32 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.qbs {
+  float: left;
+  padding: 60px;
+}
+.rbs {
+  float: left;
+  padding: 60px;
+}
+.wrs {
+  float: left;
+  padding: 60px;
+}
+.tes {
+  float: left;
+  padding: 60px;
+}
+.defs {
+  float: left;
+  padding: 60px;
+}
+.pks {
+  float: left;
+  padding: 60px;
+}
+
+h4 {
+  text-decoration: underline;
+}

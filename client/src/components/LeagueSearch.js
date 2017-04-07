@@ -37,7 +37,7 @@ class LeagueSearch extends Component {
           <input
             type="text"
             placeholder="LeagueID"
-            onChange={(event) => this.handleOnLeagueChange(event)} /><br></br>
+            onChange={(event) => this.handleOnLeagueChange(event)} /><br></br><br></br>
           <input
             type="submit"
             value="Find League" />

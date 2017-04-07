@@ -14,10 +14,15 @@ import styles from './App.css'
 export class App extends Component {
   componentDidMount() {
     if (this.props.players.length === 0) {
-      console.log('in component did mount')
-      this.props.actions.fetchPlayers(),
-      this.props.actions.fetchMyFantasyLeaguePlayers(),
-      this.props.actions.fetchMyFantasyLeagueADP(),
+      this.props.actions.fetchPlayers()
+    }
+    if (this.props.mflplayers.length === 0) {
+      this.props.actions.fetchMyFantasyLeaguePlayers()
+    }
+    if (this.props.adp.length === 0) {
+      this.props.actions.fetchMyFantasyLeagueADP()
+    }
+    if (this.props.comments.length === 0) {
       this.props.actions.fetchComments()
     }
   }
