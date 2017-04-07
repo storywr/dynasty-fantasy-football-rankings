@@ -5,6 +5,7 @@ import mflplayers from './mflplayers';
 import adp from './adp';
 import league from './league';
 import rosters from './rosters';
+import profile from './profile';
 
 const rootReducer =  combineReducers({
   players,
@@ -12,7 +13,8 @@ const rootReducer =  combineReducers({
   mflplayers,
   adp,
   league,
-  rosters
+  rosters,
+  profile
 });
 
 export default rootReducer;
