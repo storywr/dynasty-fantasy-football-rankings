@@ -45,14 +45,18 @@ class PlayerSearch extends Component {
       <div>
         <PageHeader>{player.name} <small>{player.team}</small></PageHeader>
         <div className="playercard">
-          <img src={player.pic}/><br></br><br></br>
-          <h4>{player.position} #{player.positional_ranking}</h4>
-          <ul className="comments">{comments.map(comment =>
-            <li>{comment.summary}</li>
-          )}</ul>
-          <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
-          <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">Raise Positional Rank</button><br></br><br></br>
-          <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">Lower Positional Rank</button>
+          <div className="playerinfo">
+            <img className="profilepic" src={player.pic}/><br></br><br></br>
+            <h4>{player.position} #{player.positional_ranking}:
+            &nbsp;
+            <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
+            <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
+            </h4>
+            <ul className="comments">{comments.map(comment =>
+              <li>{comment.summary}</li>
+            )}</ul><br></br>
+            <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+          </div>
         </div>
       </div>
     );

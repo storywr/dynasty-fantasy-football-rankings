@@ -3,8 +3,27 @@
   width: 95%;
 }
 
+.updateButton {
+  border-radius: 50%;
+  width: 30px;
+  background-color: grey;
+  border:4px solid rgb(21, 21, 24);
+}
+
 .playercard {
   background-color: rgb(23, 23, 27);
   width: 40%;
   border:4px solid rgb(21, 21, 24);
+}
+
+.playerinfo {
+  padding: 15px;
+}
+
+.profilepic {
+  border:5px solid rgb(21, 21, 24);
+}
+
+h4 {
+  text-decoration: none;
 }
