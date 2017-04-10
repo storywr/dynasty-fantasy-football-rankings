@@ -25,5 +25,5 @@
 }
 
 h4 {
-  text-decoration: none;
+  text-decoration: none !important;
 }
