@@ -31,8 +31,10 @@ class Quarterbacks extends Component {
       fullName = fullName.split(',');
       var lastName = fullName[0]
       var firstName = fullName[1]
-      player.name = firstName.concat(" ")
-      player.name = player.name.concat(lastName)
+      if (firstName != null) {
+        player.name = firstName.concat(" ")
+        player.name = player.name.concat(lastName)
+      }
     })
 
     function checkMflQB(player) {

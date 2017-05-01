@@ -13,17 +13,16 @@ class RosterShow extends Component {
     const rosterplayers = this.props.roster.player;
 
     rosterplayers.forEach(player => {
-      player.name = mflplayers.find(mflplayer => mflplayer.id == player.id)
+      player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);
+      var fullName = player.name.name
+      fullName = fullName.split(',');
+      var lastName = fullName[0]
+      var firstName = fullName[1]
+      if (firstName != null) {
+        player.name.name = firstName.concat(" ")
+        player.name.name = player.name.name.concat(lastName)
+      }
     })
-
-    // rosterplayers.forEach(player => {
-    //   var fullName = player.name.name
-    //   fullName = fullName.split(',');
-    //   var lastName = fullName[0]
-    //   var firstName = fullName[1]
-    //   player.name.name = firstName.concat(" ")
-    //   player.name.name = player.name.name.concat(lastName)
-    // })
 
     function checkQB(player) {
       return player.name.position === "QB"
