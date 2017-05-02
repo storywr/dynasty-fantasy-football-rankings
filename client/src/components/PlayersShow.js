@@ -42,19 +42,21 @@ class PlayersShow extends Component {
 
     return (
       <div>
-        <PageHeader>{player.name} <small>{player.team}</small></PageHeader>
-        <div className="playercard">
-          <div className="playerinfo">
-            <img className="profilepic" src={player.pic}/><br></br><br></br>
-            <h4>{player.position} #{player.positional_ranking}
-            &nbsp;
-            <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
-            <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
-            </h4>
-            <ul className="comments">{comments.map(comment =>
-              <li>{comment.summary}</li>
-            )}</ul><br></br>
-            <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+        <PageHeader className="playerheader">{player.name} <small>{player.team}</small></PageHeader>
+        <div className="player">
+          <div className="playercard">
+            <div className="playerinfo">
+              <img className="profilepic" src={player.pic}/><br></br><br></br>
+              <h4>{player.position} #{player.positional_ranking}
+              &nbsp;
+              <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
+              <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
+              </h4>
+              <ul className="comments">{comments.map(comment =>
+                <li>{comment.summary}</li>
+              )}</ul><br></br>
+              <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+            </div>
           </div>
         </div>
       </div>

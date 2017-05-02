@@ -13,6 +13,7 @@
 .playercard {
   background:rgba(0,0,0,0.5);
   width: 40%;
+  padding-left: 1%;
 }
 
 .playerinfo {
@@ -21,4 +22,12 @@
 
 .profilepic {
   border:2px solid rgb(21, 21, 24);
+}
+
+.playerheader {
+  padding-left: 1%;
+}
+
+.player {
+  padding-left: 1%;
 }

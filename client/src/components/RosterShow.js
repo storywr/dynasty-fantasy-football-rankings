@@ -56,6 +56,7 @@ class RosterShow extends Component {
 
     return (
       <div className="roster">
+        <PageHeader className="headerroster">Roster <small></small></PageHeader>
         <div className="qbs">
         <h4>Quarterbacks</h4>
           <p>{qbs.map(player =>

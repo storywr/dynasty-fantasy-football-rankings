@@ -1,25 +1,19 @@
 .qbs {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 .rbs {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 .wrs {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 .tes {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 .defs {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 .pks {
-  height:100%;
   width: 16.66666666666666666666%;
 }
 
@@ -27,6 +21,8 @@
   text-decoration: underline;
 }
 
-.h4 {
-  color: grey;
+.headerroster {
+  padding-left: 1%;
+  float: left;
+  width: 100%;
 }
