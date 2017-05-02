@@ -7,8 +7,8 @@
   background:
     /* top, transparent black, faked with gradient */
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
     ),
     /* bottom, image */
     url(https://s-media-cache-ak0.pinimg.com/originals/c8/32/d3/c832d3d2226449bedbc2382672bdec45.jpg);
