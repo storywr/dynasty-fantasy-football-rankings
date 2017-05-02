@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
+import '../adp.css'
 
 const ADP = (props) => {
 
@@ -38,10 +39,10 @@ const ADP = (props) => {
   })
 
   return (
-    <div className="adp">
-      <PageHeader>ADP <small>Check the Market</small></PageHeader>
+    <div>
+      <PageHeader className="adp">ADP <small>Check the Market</small></PageHeader>
       <ol>{rankedPlayers.map(player =>
-        <li>{player.name} - {player.position}</li>
+        <Link to={`/player/${player.name}`}><li>{player.name} - {player.position}</li></Link>
       )}</ol>
     </div>
   );

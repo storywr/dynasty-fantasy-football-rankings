@@ -5,6 +5,7 @@ import { fetchMyLeague } from '../actions/league';
 import { PageHeader } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import '../App.css'
+import '../league.css'
 
 class LeagueSearch extends Component {
 
@@ -32,7 +33,7 @@ class LeagueSearch extends Component {
 
     return (
       <div>
-        <PageHeader className="positionheader">Find Your League</PageHeader><br></br><br></br>
+        <PageHeader className="leagueheader">Find Your League</PageHeader><br></br><br></br>
         <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"

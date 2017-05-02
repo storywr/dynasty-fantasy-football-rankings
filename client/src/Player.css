@@ -20,6 +20,10 @@
   padding: 15px;
 }
 
+.playerinfo img {
+  border:5px solid rgb(15, 15, 19);
+}
+
 .profilepic {
   border:2px solid rgb(21, 21, 24);
 }

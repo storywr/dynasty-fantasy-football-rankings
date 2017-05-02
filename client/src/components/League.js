@@ -6,6 +6,7 @@ import { fetchRosters } from  '../actions/rosters.js'
 import { fetchMyLeague } from  '../actions/league.js'
 import { bindActionCreators } from 'redux';
 import '../Positions.css'
+import '../league.css'
 
 class League extends Component {
   componentDidMount() {
@@ -16,12 +17,12 @@ class League extends Component {
 
     return (
       <div>
-        <PageHeader className="positionheader">{this.props.league.name}</PageHeader><br></br><br></br>
+        <PageHeader className="leagueheader">{this.props.league.name}</PageHeader><br></br><br></br>
         <div className="players">
-          <Carousel className="positioncarousel">
+          <Carousel className="leaguecarousel">
             {this.props.league.franchises.franchise.map(franchise =>
               <Carousel.Item>
-                <img width={200} height={200} alt="100x100" src={franchise.icon || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/>
+                <img width={300} height={300} alt="500x500" src={franchise.icon || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/>
                 <Carousel.Caption>
                   <h2><Link to={`/rosters/${franchise.id}`}>{franchise.name}</Link></h2>
                 </Carousel.Caption>
