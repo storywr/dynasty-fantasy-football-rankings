@@ -1,10 +1,17 @@
 .App {
   text-align: left;
-  padding-left: 30px;
-  padding-right: 30px;
   background-color: rgb(30, 30, 34);
   color: ghostwhite;
   min-height: 100vh;
+  overflow: hidden;
+  background:
+    /* top, transparent black, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    /* bottom, image */
+    url(https://s-media-cache-ak0.pinimg.com/originals/c8/32/d3/c832d3d2226449bedbc2382672bdec45.jpg);
 }
 
 .myForm {
@@ -20,7 +27,8 @@
 }
 
 .navbar {
-  background: rgb(26, 26, 30) !important;
+  background:rgba(0,0,0,0.4) !important;
+  border:2px solid rgb(20, 20, 24) !important;
 }
 
 .App-logo {
