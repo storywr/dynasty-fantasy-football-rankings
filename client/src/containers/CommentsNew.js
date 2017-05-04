@@ -12,7 +12,8 @@ class CommentsNew extends Component {
     super(props);
     this.state = {
       summary: '',
-      player_id: props.player.id
+      player_id: props.player.id,
+      comments: props.comments
     };
   }
 
@@ -21,6 +22,9 @@ class CommentsNew extends Component {
     console.log(this.state);
     this.props.actions.addComment(this.state);
     this.props.actions.fetchComments()
+    this.setState({
+      comments: this.state.comments
+    })
     browserHistory.push(`/players/${this.state.player_id}`);
     this.props.actions.fetchComments()
   }

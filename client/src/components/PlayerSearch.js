@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import { updateRanking } from  '../actions/players.js'
-import { fetchplayers } from  '../actions/players.js'
+import { fetchPlayers } from  '../actions/players.js'
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../Player.css'
@@ -86,7 +86,7 @@ function searchPlayers(player, ownProps) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking, fetchplayers }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchPlayers }, dispatch)
   };
 };
 

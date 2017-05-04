@@ -4,7 +4,8 @@ import { Link } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import { updateRanking } from  '../actions/players.js'
-import { fetchplayers } from  '../actions/players.js'
+import { fetchPlayers } from  '../actions/players.js'
+import { fetchComments } from  '../actions/comments.js'
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../Player.css'
@@ -37,7 +38,7 @@ class PlayersShow extends Component {
   }
 
   render() {
-    const player = this.state.player;
+    const player = this.props.player;
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
 
     return (
@@ -73,7 +74,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking, fetchplayers }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments }, dispatch)
   };
 };
 
