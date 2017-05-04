@@ -17,7 +17,6 @@ import ADP from './components/ADP';
 import League from './components/League';
 import LeagueSearch from './components/LeagueSearch';
 import RosterShow from './components/RosterShow';
-import CommentsNew from './containers/CommentsNew';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -46,7 +45,6 @@ ReactDOM.render(
         <Route path="/player/:name" component={PlayerSearch} />
         <Route path="/players/:id" component={PlayersShow} />
         <Route path="/rosters/:id" component={RosterShow} />
-        <Route path="/players/:id/comments/new" component={CommentsNew} />
       </Route>
     </Router>
   </Provider>,
