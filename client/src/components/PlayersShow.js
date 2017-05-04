@@ -6,6 +6,7 @@ import { PageHeader } from 'react-bootstrap';
 import { updateRanking } from  '../actions/players.js'
 import { fetchPlayers } from  '../actions/players.js'
 import { fetchComments } from  '../actions/comments.js'
+import { addComment } from '../actions/comments';
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../Player.css'
@@ -15,8 +16,24 @@ class PlayersShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      player: props.player
+      player: props.player,
+      comments: props.comments,
+      summary: '',
+      player_id: props.player.id,
     };
+  }
+
+  handleOnSubmit(event) {
+    event.preventDefault();
+    this.props.actions.fetchComments()
+    this.props.actions.addComment(this.state);
+    this.props.actions.fetchComments()
+  }
+
+  handleOnSummaryChange(event) {
+    this.setState({
+      summary: event.target.value
+    });
   }
 
   handleMinusOnClick(event) {
@@ -56,7 +73,18 @@ class PlayersShow extends Component {
               <ul className="comments">{comments.map(comment =>
                 <li>{comment.summary}</li>
               )}</ul><br></br>
-              <Link to={`/players/${player.id}/comments/new`}>Add Comment</Link><br></br><br></br>
+              <h4>Add a Comment</h4>
+              <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
+                <input
+                  type="textarea"
+                  className="summaryBox"
+                  placeholder="Summary"
+                  refs="summary"
+                  onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
+                <input
+                  type="submit"
+                  value="Add Comment" />
+              </form>
             </div>
           </div>
         </div>
@@ -74,7 +102,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments, addComment }, dispatch)
   };
 };
 
