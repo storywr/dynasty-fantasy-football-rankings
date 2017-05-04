@@ -19,12 +19,12 @@ class CommentsNew extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
     this.props.actions.addComment(this.state);
-    this.props.actions.fetchComments()
     this.setState({
       comments: this.state.comments
     })
+    console.log(this.state);
+    this.props.actions.fetchComments()
     browserHistory.push(`/players/${this.state.player_id}`);
     this.props.actions.fetchComments()
   }
