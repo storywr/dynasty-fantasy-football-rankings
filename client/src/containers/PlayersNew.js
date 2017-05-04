@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { addPlayer } from '../actions/players';
 import { fetchPlayers } from '../actions/players';
 import { browserHistory } from 'react-router';
+import * as ReactBootstrap from 'react-bootstrap';
+import { PageHeader } from 'react-bootstrap';
 import '../App.css'
 
 class PlayersNew extends Component {
@@ -58,8 +60,8 @@ class PlayersNew extends Component {
   render() {
     return (
       <div>
-        <h3>Add a Player</h3>
-        <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
+        <PageHeader className="playerheader">Add Player <small>Rankings</small></PageHeader>
+        <form className="newPlayerForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"
             placeholder="Name"
