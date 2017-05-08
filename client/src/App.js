@@ -7,6 +7,7 @@ import { fetchMyFantasyLeagueADP } from  './actions/adp.js'
 import { fetchMyLeague } from  './actions/league.js'
 import { fetchComments } from  './actions/comments.js'
 import { fetchProfile } from  './actions/profile.js'
+import { fetchScore } from  './actions/score.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import './App.css'
@@ -30,6 +31,7 @@ export class App extends Component {
       this.props.actions.fetchMyLeague()
     }
     this.props.actions.fetchProfile({playerid: '11679'})
+    this.props.actions.fetchScore({playerid: '11679'})
   }
   render() {
     return (
@@ -57,12 +59,12 @@ export class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {players: state.players, comments: state.comments, mflplayers: state.mflplayers, adp: state.adp, league: state.league, profile: state.profile}
+  return {players: state.players, comments: state.comments, mflplayers: state.mflplayers, adp: state.adp, league: state.league, profile: state.profile, score: state.score}
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP, fetchMyLeague, fetchProfile}, dispatch)
+    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP, fetchMyLeague, fetchProfile, fetchScore}, dispatch)
   }
 }
 

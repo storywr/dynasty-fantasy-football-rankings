@@ -8,6 +8,7 @@ import { fetchPlayers } from  '../actions/players.js'
 import { fetchComments } from  '../actions/comments.js'
 import { addComment } from '../actions/comments';
 import { fetchProfile } from '../actions/profile';
+import { fetchScore } from '../actions/score';
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../Player.css'
@@ -17,19 +18,23 @@ class PlayerSearch extends Component {
   constructor(props) {
     super(props);
     this.props.actions.fetchProfile({playerid: this.props.playerid})
+    this.props.actions.fetchScore({playerid: this.props.playerid})
     this.state = {
       player: props.player,
       comments: props.comments,
       summary: '',
       player_id: props.player.id,
-      profile: props.profile
+      profile: props.profile,
+      score: props.score
     };
     this.props.actions.fetchProfile({playerid: this.props.playerid})
+    this.props.actions.fetchScore({playerid: this.props.playerid})
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       profile: this.props.profile,
+      score: this.props.score,
       comments: this.props.comments
     });
   }
@@ -70,10 +75,12 @@ class PlayerSearch extends Component {
     const player = this.props.player;
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
     const playerProfile = this.state.profile.playerProfile;
+    const playerScore = this.state.score.playerScores.playerScore;
 
     return (
       <div>
         <PageHeader className="playerheader">{playerProfile.name.split(" ")[1]} {playerProfile.name.split(" ")[0].slice(0, -1)} <small>{player.team}</small></PageHeader>
+        <PageHeader className="header2">2016 <small>Fantasy Points</small></PageHeader>
         <div className="player">
           <div className="playercard">
             <div className="playerinfo">
@@ -111,6 +118,13 @@ class PlayerSearch extends Component {
             </div>
           </div>
         </div>
+        <div className="fantasy">
+        <tr className="fantasyPoints">
+          <th><ol>{playerScore.map(week =>
+            <li>{week.score}</li>
+          )}</ol></th>
+        </tr>
+        </div>
       </div>
     );
   }
@@ -127,7 +141,8 @@ const mapStateToProps = (state, ownProps) => {
     player: foundPlayer,
     comments: state.comments,
     playerid: ownProps.routeParams.id,
-    profile: state.profile
+    profile: state.profile,
+    score: state.score
   };
 };
 
@@ -139,7 +154,7 @@ function searchPlayers(player, ownProps) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments, addComment, fetchProfile }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments, addComment, fetchProfile, fetchScore }, dispatch)
   };
 };
 

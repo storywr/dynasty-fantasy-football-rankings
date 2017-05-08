@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :scores
   resources :profiles
   resources :rosters
   resources :leagues
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     get '/league/', to: 'leagues#league'
     get '/roster/', to: 'rosters#roster'
     post '/profiles/', to: 'profiles#profile'
+    post '/scores/', to: 'scores#score'
     post '/players/', to: 'players#update'
     resources :players, only: [:index, :create, :update]
     resources :comments, only: [:index, :create]

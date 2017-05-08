@@ -1,5 +1,4 @@
 .comments {
-  float: top-left;
   width: 95%;
 }
 
@@ -12,7 +11,6 @@
 
 .playercard {
   background:rgba(0,0,0,0.5);
-  width: 40%;
   padding-left: 1%;
 }
 
@@ -29,10 +27,28 @@
 }
 
 .playerheader {
+  padding-left: 1%;
+  float: left;
+  width: 50%;
+}
+
+.player {
+  width: 40%;
+  float: left;
+  padding-left: 1%;
+}
+
+.fantasy {
+  background:rgba(0,0,0,0.5);
+  width: 50%;
+  float: right;
+  font-size: 125%;
   padding-top: 1%;
   padding-left: 1%;
 }
 
-.player {
+.header2 {
   padding-left: 1%;
+  float: right;
+  width: 50%;
 }
