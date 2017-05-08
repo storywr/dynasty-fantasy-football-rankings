@@ -34,6 +34,7 @@ class PlayersShow extends Component {
     this.props.actions.fetchComments()
     this.props.actions.addComment(this.state);
     this.props.actions.fetchComments()
+    this.refs.scouting.value = ""
   }
 
   handleOnSummaryChange(event) {
@@ -82,6 +83,7 @@ class PlayersShow extends Component {
               )}</ul><br></br>
               <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
                 <input
+                  ref="scouting"
                   type="textarea"
                   className="summaryBox"
                   onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
