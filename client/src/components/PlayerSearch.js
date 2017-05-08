@@ -73,7 +73,6 @@ class PlayerSearch extends Component {
               <ul className="comments">{comments.map(comment =>
                 <li>{comment.summary}</li>
               )}</ul><br></br>
-              <h4>Add Comment</h4>
               <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
                 <input
                   type="textarea"
