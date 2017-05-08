@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/adp/', to: 'adps#adp'
     get '/league/', to: 'leagues#league'
     get '/roster/', to: 'rosters#roster'
+    post '/profiles/', to: 'profiles#profile'
     post '/players/', to: 'players#update'
     resources :players, only: [:index, :create, :update]
     resources :comments, only: [:index, :create]
