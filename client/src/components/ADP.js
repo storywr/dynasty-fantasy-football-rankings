@@ -28,7 +28,7 @@ class ADP extends Component {
         <div>
           <PageHeader className="adp">ADP <small>Check the Market</small></PageHeader>
           <ol>{adp.map(player =>
-            <Link to={`/player/${player.name.name}`}><li>{player.name.name} - {player.name.position}</li></Link>
+            <Link to={`/player/${player.name.name}/${player.id}`}><li>{player.name.name} - {player.name.position}</li></Link>
           )}</ol>
         </div>
     );

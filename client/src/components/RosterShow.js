@@ -60,37 +60,37 @@ class RosterShow extends Component {
         <div className="qbs">
         <h4>Quarterbacks</h4>
           <p>{qbs.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
         <div className="rbs">
         <h4>Running Backs</h4>
           <p>{rbs.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
         <div className="wrs">
         <h4>Wide Receivers</h4>
           <p>{wrs.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
         <div className="tes">
         <h4>Tight Ends</h4>
           <p>{tes.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
         <div className="defs">
         <h4>Defense & Special Teams</h4>
           <p>{defs.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
         <div className="pks">
         <h4>Place Kickers</h4>
           <p>{pks.map(player =>
-            <Link to={`/player/${player.name.name}`}><p>{player.name.name} - {player.name.team}</p></Link>
+            <Link to={`/player/${player.name.name}/${player.name.id}`}><p>{player.name.name} - {player.name.team}</p></Link>
           )}</p>
         </div>
       </div>
