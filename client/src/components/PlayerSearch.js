@@ -7,6 +7,7 @@ import { updateRanking } from  '../actions/players.js'
 import { fetchPlayers } from  '../actions/players.js'
 import { fetchComments } from  '../actions/comments.js'
 import { addComment } from '../actions/comments';
+import { fetchProfile } from '../actions/profile';
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../Player.css'
@@ -15,12 +16,22 @@ class PlayerSearch extends Component {
 
   constructor(props) {
     super(props);
+    this.props.actions.fetchProfile({playerid: this.props.playerid})
     this.state = {
       player: props.player,
       comments: props.comments,
       summary: '',
       player_id: props.player.id,
+      profile: props.profile
     };
+    this.props.actions.fetchProfile({playerid: this.props.playerid})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      profile: this.props.profile,
+      comments: this.props.comments
+    });
   }
 
   handleOnSubmit(event) {
@@ -57,14 +68,26 @@ class PlayerSearch extends Component {
   render() {
     const player = this.props.player;
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
+    const playerProfile = this.state.profile.playerProfile;
 
     return (
       <div>
-        <PageHeader className="playerheader">{player.name} <small>{player.team}</small></PageHeader>
+        <PageHeader className="playerheader">{playerProfile.name.split(" ")[1]} {playerProfile.name.split(" ")[0].slice(0, -1)} <small>{player.team}</small></PageHeader>
         <div className="player">
           <div className="playercard">
             <div className="playerinfo">
-              <img className="profilepic" src={player.pic}/><br></br><br></br>
+              <img className="profilepic" src={player.pic || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/><br></br>
+              { (player.name) ?
+                <p></p>
+                : <h3>You have not added this player to your Rankings!</h3>
+              }
+              &nbsp;
+              <h5>Age/DOB: {playerProfile.player.age} / {playerProfile.player.dob}</h5>
+              <h5>Height: {playerProfile.player.height}</h5>
+              <h5>Weight: {playerProfile.player.weight}</h5>
+              <h5>ADP: {playerProfile.player.adp}</h5>
+              &nbsp;
+              <h4>Your Scouting Report</h4>
               <h4>{player.position} #{player.positional_ranking}
               &nbsp;
               <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
@@ -99,7 +122,9 @@ const mapStateToProps = (state, ownProps) => {
   })
   return {
     player: foundPlayer,
-    comments: state.comments
+    comments: state.comments,
+    playerid: ownProps.routeParams.id,
+    profile: state.profile
   };
 };
 
@@ -111,7 +136,7 @@ function searchPlayers(player, ownProps) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments, addComment }, dispatch)
+    actions: bindActionCreators({ updateRanking, fetchPlayers, fetchComments, addComment, fetchProfile }, dispatch)
   };
 };
 

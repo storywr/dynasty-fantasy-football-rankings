@@ -23,6 +23,12 @@ class PlayersShow extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      comments: this.props.comments
+    });
+  }
+
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.actions.fetchComments()
@@ -65,6 +71,7 @@ class PlayersShow extends Component {
           <div className="playercard">
             <div className="playerinfo">
               <img className="profilepic" src={player.pic}/><br></br><br></br>
+              <h4>Your Scouting Report</h4>
               <h4>{player.position} #{player.positional_ranking}
               &nbsp;
               <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>

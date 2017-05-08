@@ -7,43 +7,28 @@ import '../Positions.css'
 class WideReceivers extends Component {
 
   render() {
-    const mflplayers = this.props.mflplayers;
-    const adp = this.props.adp;
+    var mflplayers = this.props.mflplayers;
+    var adp = this.props.adp;
 
-    var hash = Object.create(null);
-
-    mflplayers.concat(adp).forEach(function(obj) {
-        hash[obj.id] = Object.assign(hash[obj.id] || {}, obj);
-    });
-
-    var rankedPlayers = Object.keys(hash).map(function(key) {
-        return hash[key];
-    });
-
-    rankedPlayers = rankedPlayers.filter(player => player.averagePick > 0)
-
-    rankedPlayers.sort(function(a, b){
-      return a.averagePick - b.averagePick
-    })
-
-    rankedPlayers.forEach(player => {
-      var fullName = player.name
+    adp.forEach(player => {
+      player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);
+      var fullName = player.name.name
       fullName = fullName.split(',');
       var lastName = fullName[0]
       var firstName = fullName[1]
       if (firstName != null) {
-        player.name = firstName.concat(" ")
-        player.name = player.name.concat(lastName)
+        player.name.name = firstName.concat(" ")
+        player.name.name = player.name.name.concat(lastName)
       }
     })
 
     function checkMflWR(player) {
-      return player.position === "WR"
+      return player.name.position === "WR"
     }
 
-    rankedPlayers = rankedPlayers.filter(checkMflWR)
+    var rankedPlayers = adp.filter(checkMflWR)
 
-    const topWR = rankedPlayers.slice(0, 40)
+    var topWR = rankedPlayers.slice(0, 40)
 
     return (
       <div>
@@ -55,7 +40,7 @@ class WideReceivers extends Component {
         <div className="adpdata">
           <tr>
             <th><ol>{topWR.map(mflplayer =>
-              <Link to={`/player/${mflplayer.name}`}><li>{mflplayer.name}</li></Link>
+              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
             )}</ol></th>
           </tr>
         </div>

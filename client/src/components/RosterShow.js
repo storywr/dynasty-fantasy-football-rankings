@@ -9,8 +9,8 @@ import '../Roster.css'
 class RosterShow extends Component {
 
   render() {
-    const mflplayers = this.props.mflplayers;
-    const rosterplayers = this.props.roster.player;
+    var mflplayers = this.props.mflplayers;
+    var rosterplayers = this.props.roster.player;
 
     rosterplayers.forEach(player => {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);

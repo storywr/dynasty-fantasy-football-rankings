@@ -42,7 +42,7 @@ ReactDOM.render(
         <Route path="/findleague" component={LeagueSearch} />
         <Route path="/league" component={League} />
         <Route path="/players/new" component={PlayersNew} />
-        <Route path="/player/:name" component={PlayerSearch} />
+        <Route path="/player/:name/:id" component={PlayerSearch} />
         <Route path="/players/:id" component={PlayersShow} />
         <Route path="/rosters/:id" component={RosterShow} />
       </Route>
