@@ -78,35 +78,36 @@ class PlayerSearch extends Component {
           <div className="playercard">
             <div className="playerinfo">
               <img className="profilepic" src={player.pic || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/><br></br>
-              { (player.name) ?
-                <p></p>
-                : <h3>You have not added this player to your Rankings!</h3>
-              }
               &nbsp;
               <h5>Age/DOB: {playerProfile.player.age} / {playerProfile.player.dob}</h5>
               <h5>Height: {playerProfile.player.height}</h5>
               <h5>Weight: {playerProfile.player.weight}</h5>
               <h5>ADP: {playerProfile.player.adp}</h5>
               &nbsp;
-              <h4>Your Scouting Report</h4>
-              <h4>{player.position} #{player.positional_ranking}
-              &nbsp;
-              <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
-              <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
-              </h4>
-              <ul className="comments">{comments.map(comment =>
-                <li>{comment.summary}</li>
-              )}</ul><br></br>
-              <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
-                <input
-                  ref="scouting"
-                  type="textarea"
-                  className="summaryBox"
-                  onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
-                <input
-                  type="submit"
-                  value="Add Comment" />
-              </form>
+              { (player.name) ?
+                <div>
+                  <h4>Your Scouting Report</h4>
+                  <h4>{player.position} #{player.positional_ranking}
+                  &nbsp;
+                  <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
+                  <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
+                  </h4>
+                  <ul className="comments">{comments.map(comment =>
+                    <li>{comment.summary}</li>
+                  )}</ul><br></br>
+                  <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
+                    <input
+                      ref="scouting"
+                      type="textarea"
+                      className="summaryBox"
+                      onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
+                    <input
+                      type="submit"
+                      value="Add Comment" />
+                  </form>
+                </div>
+                : <h3>You have not added this player to your Rankings!</h3>
+              }
             </div>
           </div>
         </div>
