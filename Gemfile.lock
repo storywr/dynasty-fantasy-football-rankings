@@ -69,6 +69,7 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -135,6 +136,7 @@ DEPENDENCIES
   foreman (~> 0.82.0)
   httparty
   listen (~> 3.0.5)
+  pg
   pry
   puma (~> 3.0)
   rack-cors
@@ -145,4 +147,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.13.7
+   1.14.6
