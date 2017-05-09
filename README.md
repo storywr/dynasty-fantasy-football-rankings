@@ -6,7 +6,7 @@ This App was designed as a companion to MFL fantasy football leagues. It is curr
 Installation
 ------------
 
-bundle && cd client && npm i
+bundle install && cd client && npm i
 
 cd ..
 
