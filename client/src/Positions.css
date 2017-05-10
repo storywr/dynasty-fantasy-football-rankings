@@ -17,19 +17,20 @@ a:active {
 
 .positionpic {
   margin: auto;
-  width: 18vw;
+  width: 18%;
 }
 
 .positionimage {
-  border:5px solid rgb(15, 15, 19);
+  border: 2px solid rgb(15, 15, 19);
 }
 
 .adpdata {
   width: 100%;
+  column-width: 15%;
   column-count: 4;
   padding-left: 13%;
   padding-top: 1%;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   background:rgba(0,0,0,0.7);
 }
 
@@ -52,7 +53,9 @@ a:active {
 }
 
 .carousel img {
-  border:5px solid rgb(15, 15, 19);
+  height: 9%;
+  width: 9%;
+  border:2px solid rgb(15, 15, 19);
   margin-top: 2%;
 }
 
