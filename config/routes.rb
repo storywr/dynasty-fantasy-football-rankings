@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :rosters
   resources :leagues
-  # namespace :api do
-  scope '/api' do
+  namespace :api do
     get '/mflplayers/', to: 'mflplayers#players'
     get '/adp/', to: 'adps#adp'
     get '/league/', to: 'leagues#league'
