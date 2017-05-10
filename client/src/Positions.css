@@ -17,7 +17,6 @@ a:active {
 
 .positionpic {
   float: left;
-  width: 38%;
   padding-left: 1%;
 }
 
@@ -32,7 +31,6 @@ a:active {
   column-count: 2;
   padding-top: 1.25%;
   padding-left: 2%;
-  margin-right: 10%;
   margin-left: 50%;
   background:rgba(0,0,0,0.5);
   font-size: 110%;

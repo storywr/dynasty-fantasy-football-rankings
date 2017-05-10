@@ -60,7 +60,7 @@ class PlayersNew extends Component {
   render() {
     return (
       <div>
-        <PageHeader className="playerheader">Add Player <small>Rankings</small></PageHeader>
+        <PageHeader className="newplayerheader">Add Player <small>Rankings</small></PageHeader>
         <form className="newPlayerForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"

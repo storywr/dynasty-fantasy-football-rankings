@@ -35,7 +35,7 @@ class Quarterbacks extends Component {
         <PageHeader className="header1">Quarterback Rankings <small>Going Deep</small></PageHeader>
         <PageHeader className="header2">ADP <small>Check the Market</small></PageHeader>
         <div className="positionpic">
-          <img className="positionimage" src={"https://static01.nyt.com/images/2015/01/20/sports/20patriots1/20patriots1-master1050.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
+          <img className="positionimage" src={"https://static01.nyt.com/images/2015/01/20/sports/20patriots1/20patriots1-master1050.jpg"} style={{height: '453.33px', width: '680px', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="adpdata">
           <tr>
