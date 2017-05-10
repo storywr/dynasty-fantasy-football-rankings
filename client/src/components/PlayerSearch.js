@@ -11,7 +11,7 @@ import { fetchProfile } from '../actions/profile';
 import { fetchScore } from '../actions/score';
 import { bindActionCreators } from 'redux';
 import '../App.css'
-import '../Player.css'
+import '../PlayerSearch.css'
 
 class PlayerSearch extends Component {
 

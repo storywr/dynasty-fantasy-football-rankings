@@ -1,59 +1,55 @@
-.commentsshow {
+.comments {
   width: 95%;
 }
 
-.updateButtonshow {
+.updateButton {
   border-radius: 50%;
   width: 30px;
   background-color: grey;
   border:4px solid rgb(15, 15, 19);
 }
 
-.playercardshow {
+.playercard {
   background:rgba(0,0,0,0.5);
   padding-left: 1%;
-  width: 40%;
-  margin-left: 1%;
 }
 
-.myFormshow {
-  color: black;
-  height: 200px;
-}
-
-
-.playerinfoshow {
+.playerinfo {
   padding: 15px;
 }
 
-.playerinfoshow img {
-  border:4px solid rgb(15, 15, 19);
+.playerinfo img {
+  border:5px solid rgb(15, 15, 19);
 }
 
-.profilepicshow {
+.profilepic {
   border:2px solid rgb(21, 21, 24);
 }
 
-.playerheadershow {
+.playerheader {
   padding-left: 1%;
-  width: 100%;
-}
-
-.playershowshow {
-  width: 40%;
-  padding-left: 1%;
-}
-
-.fantasyshow {
-  background:rgba(0,0,0,0.5);
+  float: left;
   width: 50%;
+}
+
+.player {
+  width: 40%;
+  float: left;
+  padding-left: 1%;
+}
+
+.fantasy {
+  background:rgba(0,0,0,0.5);
+  width: 45%;
   float: right;
   font-size: 125%;
   padding-top: 1%;
   padding-left: 1%;
+  height: 35vw;
+  margin-right: 5%;
 }
 
-.header2show {
+.header2 {
   padding-left: 1%;
   float: right;
   width: 50%;

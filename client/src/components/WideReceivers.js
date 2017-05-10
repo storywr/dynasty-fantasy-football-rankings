@@ -35,7 +35,7 @@ class WideReceivers extends Component {
         <PageHeader className="header1">Wide Receiver Rankings <small>Straight Cash Homie</small></PageHeader>
         <PageHeader className="header2">ADP <small>Check the Market</small></PageHeader>
         <div className="positionpic">
-          <img className="positionimage" src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '468px', width: '702px', margin: 'auto'}}/><br></br><br></br>
+          <img className="positionimage" src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="adpdata">
           <tr>

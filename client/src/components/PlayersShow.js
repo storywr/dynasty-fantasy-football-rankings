@@ -67,11 +67,11 @@ class PlayersShow extends Component {
 
     return (
       <div>
-        <PageHeader className="playerheader">{player.name} <small>{player.team}</small></PageHeader>
-        <div className="player">
-          <div className="playercard">
-            <div className="playerinfo">
-              <img className="profilepic" src={player.pic}/><br></br><br></br>
+        <PageHeader className="playerheadershow">{player.name} <small>{player.team}</small></PageHeader>
+        <div className="playershow">
+          <div className="playercardshow">
+            <div className="playerinfoshow">
+              <img className="profilepicshow" src={player.pic}/><br></br><br></br>
               <h4>Your Scouting Report</h4>
               <h4>{player.position} #{player.positional_ranking}
               &nbsp;
@@ -81,7 +81,7 @@ class PlayersShow extends Component {
               <ul className="comments">{comments.map(comment =>
                 <li>{comment.summary}</li>
               )}</ul><br></br>
-              <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
+              <form className="myFormshow" onSubmit={(event) => this.handleOnSubmit(event)} >
                 <input
                   ref="scouting"
                   type="textarea"
