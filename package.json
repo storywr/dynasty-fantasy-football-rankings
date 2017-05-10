@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://fantasy-football-scout.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
