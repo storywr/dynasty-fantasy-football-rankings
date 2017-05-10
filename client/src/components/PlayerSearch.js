@@ -80,7 +80,6 @@ class PlayerSearch extends Component {
     return (
       <div>
         <PageHeader className="playerheader">{playerProfile.name.split(" ")[1]} {playerProfile.name.split(" ")[0].slice(0, -1)} <small>{player.team}</small></PageHeader>
-        <PageHeader className="header2">2016 <small>Fantasy Points</small></PageHeader>
         <div className="player">
           <div className="playercard">
             <div className="playerinfo">
@@ -119,6 +118,7 @@ class PlayerSearch extends Component {
           </div>
         </div>
         <div className="fantasy">
+        <h3>2016 Fantasy Points</h3>
         <tr className="fantasyPoints">
           <th><ol>{playerScore.map(week =>
             <li>{week.score}</li>

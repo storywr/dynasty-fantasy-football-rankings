@@ -29,7 +29,7 @@
 .playerheader {
   padding-left: 1%;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 .player {
@@ -40,17 +40,11 @@
 
 .fantasy {
   background:rgba(0,0,0,0.5);
-  width: 45%;
-  float: right;
+  float: left;
   font-size: 125%;
-  padding-top: 1%;
   padding-left: 1%;
-  height: 35vw;
-  margin-right: 5%;
-}
-
-.header2 {
-  padding-left: 1%;
-  float: right;
-  width: 50%;
+  height: 100%;
+  margin-left: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
 }

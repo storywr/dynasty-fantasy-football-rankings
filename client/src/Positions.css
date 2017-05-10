@@ -17,7 +17,8 @@ a:active {
 
 .positionpic {
   float: left;
-  padding-left: 1%;
+  margin-left: 2vw;
+  width: 39vw;
 }
 
 .positionimage {
@@ -25,37 +26,26 @@ a:active {
 }
 
 .adpdata {
-  float: top-right;
-  width: 40%;
-  height: 35%;
+  text-align: center;
+  width: 39vw;
   column-count: 2;
-  padding-top: 1.25%;
-  padding-left: 2%;
+  padding: 2%;
   margin-left: 50%;
   background:rgba(0,0,0,0.5);
-  font-size: 110%;
 }
 
 .header1 {
-  padding-left: 1%;
-  float: left;
-  width: 50%;
-}
-
-.positionheader {
-  float: left;
-  width: 100%;
+  display: block;
+  padding-left: 2%;
 }
 
 .header2 {
-  padding-left: 1%;
-  float: right;
-  width: 50%;
+  display: block;
 }
 
 .carousel {
   position: relative;
-  padding-left: 1%;
+  margin-left: 2vw;
 }
 
 .carousel img {
