@@ -16,9 +16,8 @@ a:active {
 }
 
 .positionpic {
-  float: left;
-  margin-left: 2vw;
-  width: 39vw;
+  margin: auto;
+  width: 18vw;
 }
 
 .positionimage {
@@ -26,26 +25,30 @@ a:active {
 }
 
 .adpdata {
-  text-align: center;
-  width: 39vw;
-  column-count: 2;
-  padding: 2%;
-  margin-left: 50%;
-  background:rgba(0,0,0,0.5);
+  width: 100%;
+  column-count: 4;
+  padding-left: 13%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  background:rgba(0,0,0,0.7);
 }
 
 .header1 {
-  display: block;
+  text-align: center;
   padding-left: 2%;
 }
 
 .header2 {
-  display: block;
+  text-align: center;
+  padding-left: 2%;
 }
 
 .carousel {
-  position: relative;
-  margin-left: 2vw;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-left: 0.75%;
+  padding-right: 0.75%;
+  padding-bottom: 0.75%;
 }
 
 .carousel img {
@@ -54,6 +57,6 @@ a:active {
 }
 
 .positioncarousel {
-  margin-top: 5%;
   padding-left: 1%;
+  padding-bottom: 2%;
 }

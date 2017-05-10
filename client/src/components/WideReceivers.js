@@ -36,13 +36,6 @@ class WideReceivers extends Component {
         <div className="positionpic">
           <img className="positionimage" src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
-        <div className="adpdata">
-          <tr>
-            <th><ol>{topWR.map(mflplayer =>
-              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
-            )}</ol></th>
-          </tr>
-        </div>
         <div className="players">
           <Carousel className="carousel">
             {this.props.players.map(player =>
@@ -54,6 +47,14 @@ class WideReceivers extends Component {
               </Carousel.Item>
             )}
           </Carousel>
+        </div>
+        <PageHeader className="header2">Average Draft Position <small>Check the Market</small></PageHeader>
+        <div className="adpdata">
+          <tr>
+            <th><ol>{topWR.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
+            )}</ol></th>
+          </tr>
         </div>
       </div>
     );

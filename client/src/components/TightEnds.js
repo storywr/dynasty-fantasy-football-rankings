@@ -36,13 +36,6 @@ class TightEnds extends Component {
         <div className="positionpic">
           <img className="positionimage" src={"https://static01.nyt.com/images/2015/01/21/sports/21patriots/21patriots-master1050.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
-        <div className="adpdata">
-          <tr>
-            <th><ol>{topTE.map(mflplayer =>
-              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
-            )}</ol></th>
-          </tr>
-        </div>
         <div className="players">
           <Carousel className="carousel">
             {this.props.players.map(player =>
@@ -54,6 +47,14 @@ class TightEnds extends Component {
               </Carousel.Item>
             )}
           </Carousel>
+        </div>
+        <PageHeader className="header2">Average Draft Position <small>Check the Market</small></PageHeader>
+        <div className="adpdata">
+          <tr>
+            <th><ol>{topTE.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
+            )}</ol></th>
+          </tr>
         </div>
       </div>
     );

@@ -36,13 +36,6 @@ class RunningBacks extends Component {
         <div className="positionpic">
           <img className="positionimage" src={"http://itvdeportes.s3.amazonaws.com/wp-content/uploads/2016/01/MarshawLynch.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
-        <div className="adpdata">
-          <tr>
-            <th><ol>{topRB.map(mflplayer =>
-              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
-            )}</ol></th>
-          </tr>
-        </div>
         <div className="players">
           <Carousel className="carousel">
             {this.props.players.map(player =>
@@ -54,6 +47,14 @@ class RunningBacks extends Component {
               </Carousel.Item>
             )}
           </Carousel>
+        </div>
+        <PageHeader className="header2">Average Draft Position <small>Check the Market</small></PageHeader>
+        <div className="adpdata">
+          <tr>
+            <th><ol>{topRB.map(mflplayer =>
+              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
+            )}</ol></th>
+          </tr>
         </div>
       </div>
     );
