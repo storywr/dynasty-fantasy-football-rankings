@@ -26,7 +26,7 @@ a:active {
 
 .dataContainter {
   height: 25vh;
-  margin-bottom: 15%;
+  margin-bottom: 8%;
 }
 
 .adpdata {
@@ -38,7 +38,7 @@ a:active {
   -webkit-column-fill: balance;
   padding-left: 5%;
   padding-top: 2%;
-  padding-bottom: 10%;
+  padding-bottom: 8%;
   background:rgba(0,0,0,0.7);
 }
 
@@ -55,8 +55,8 @@ a:active {
 .carousel {
   height: 10%;
   margin-top: 2%;
-  margin-left: 2%;
-  margin-right: 5%;
+  margin-left: 9%;
+  margin-right: 9%;
   margin-bottom: 5%;
   padding-bottom: 0.75%;
 }
@@ -66,9 +66,5 @@ a:active {
   border:2px solid rgb(15, 15, 19);
   margin-top: 2%;
   margin-bottom: 2%;
-}
-
-.positioncarousel {
-  padding-left: 1%;
-  padding-bottom: 2%;
+  margin-left: 30%;
 }

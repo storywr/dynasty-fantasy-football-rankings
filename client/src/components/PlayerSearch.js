@@ -120,9 +120,9 @@ class PlayerSearch extends Component {
         <div className="fantasy">
         <h3>2016 Fantasy Points</h3>
         <tr className="fantasyPoints">
-          <th><ol>{playerScore.map(week =>
+          <tr><ol>{playerScore.map(week =>
             <li>{week.score}</li>
-          )}</ol></th>
+          )}</ol></tr>
         </tr>
         </div>
       </div>
