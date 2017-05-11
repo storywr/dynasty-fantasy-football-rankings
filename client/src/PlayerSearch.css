@@ -18,6 +18,15 @@
   padding: 15px;
 }
 
+.playerinfo h4 {
+  text-decoration: underline;
+}
+
+.fantasy h4 {
+  text-decoration: underline;
+  padding-left: 1%;
+}
+
 .playerinfo img {
   border:5px solid rgb(15, 15, 19);
 }
@@ -41,10 +50,9 @@
 .fantasy {
   background:rgba(0,0,0,0.5);
   float: left;
-  font-size: 125%;
   padding-left: 1%;
   height: 100%;
   margin-left: 5%;
-  padding-left: 2%;
   padding-right: 2%;
+  font-size: 120%;
 }

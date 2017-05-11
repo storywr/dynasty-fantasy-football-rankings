@@ -39,24 +39,21 @@ a:active {
   padding-left: 5%;
   padding-top: 2%;
   padding-bottom: 8%;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.6);
 }
 
 .header1 {
   text-align: center;
-  padding-left: 2%;
 }
 
 .header2 {
   text-align: center;
-  padding-left: 2%;
+  margin-bottom: 0px !important;
 }
 
 .carousel {
   height: 10%;
   margin-top: 2%;
-  margin-left: 9%;
-  margin-right: 9%;
   margin-bottom: 5%;
   padding-bottom: 0.75%;
 }

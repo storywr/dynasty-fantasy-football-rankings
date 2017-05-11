@@ -118,7 +118,7 @@ class PlayerSearch extends Component {
           </div>
         </div>
         <div className="fantasy">
-        <h3>2016 Fantasy Points</h3>
+        <h4>2016 Fantasy Points</h4>
         <tr className="fantasyPoints">
           <tr><ol>{playerScore.map(week =>
             <li>{week.score}</li>
