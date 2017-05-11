@@ -34,7 +34,6 @@ class RunningBacks extends Component {
       <div>
         <PageHeader className="header1">Running Back Rankings <small>The Return of the Workhorse</small></PageHeader>
         <div className="positionpic">
-          <img className="positionimage" src={"http://itvdeportes.s3.amazonaws.com/wp-content/uploads/2016/01/MarshawLynch.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="players">
           <Carousel className="carousel">

@@ -34,7 +34,6 @@ class WideReceivers extends Component {
       <div>
         <PageHeader className="header1">Wide Receiver Rankings <small>Straight Cash Homie</small></PageHeader>
         <div className="positionpic">
-          <img className="positionimage" src={"https://s-media-cache-ak0.pinimg.com/originals/0d/34/ea/0d34ea2a4e192454162711f3e548cc22.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="players">
           <Carousel className="carousel">

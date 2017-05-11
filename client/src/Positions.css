@@ -37,8 +37,8 @@ a:active {
   -moz-column-fill: balance;
   -webkit-column-fill: balance;
   padding-left: 5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   background:rgba(0,0,0,0.7);
 }
 
@@ -54,20 +54,18 @@ a:active {
 
 .carousel {
   height: 10%;
-  margin-top: 4vh;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 4vh;
-  padding-left: 0.75%;
-  padding-right: 0.75%;
+  margin-top: 3%;
+  margin-left: 3%;
+  margin-right: 5%;
+  margin-bottom: 5%;
   padding-bottom: 0.75%;
 }
 
 .carousel img {
-  height: 13vh;
-  width: 13vh;
+  width: 130px;
   border:2px solid rgb(15, 15, 19);
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .positioncarousel {

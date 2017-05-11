@@ -34,7 +34,6 @@ class Quarterbacks extends Component {
       <div>
         <PageHeader className="header1">Quarterback Rankings <small>Going Deep</small></PageHeader>
         <div className="positionpic">
-          <img className="positionimage" src={"https://static01.nyt.com/images/2015/01/20/sports/20patriots1/20patriots1-master1050.jpg"} style={{height: '100%', width: '100%', margin: 'auto'}}/><br></br><br></br>
         </div>
         <div className="players">
           <Carousel className="carousel">
