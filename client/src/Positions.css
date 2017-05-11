@@ -17,7 +17,7 @@ a:active {
 
 .positionpic {
   margin: auto;
-  width: 25%;
+  width: 25vw;
 }
 
 .positionimage {
@@ -25,16 +25,18 @@ a:active {
 }
 
 .dataContainter {
-  background:rgba(0,0,0,0.2);
-  padding-top: 0.5%;
+  height: 25vh;
   margin-bottom: 2%;
 }
 
 .adpdata {
   width: 100%;
-  column-width: 15%;
+  column-width: 20vw;
   column-count: 4;
   padding-left: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background:rgba(0,0,0,0.7);
 }
 
 .header1 {
@@ -49,18 +51,18 @@ a:active {
 
 .carousel {
   height: 10%;
-  margin-top: 5%;
+  margin-top: 4vh;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 5%;
+  margin-bottom: 4vh;
   padding-left: 0.75%;
   padding-right: 0.75%;
   padding-bottom: 0.75%;
 }
 
 .carousel img {
-  height: 10%;
-  width: 10%;
+  height: 13vh;
+  width: 13vh;
   border:2px solid rgb(15, 15, 19);
   margin-top: 2%;
 }
