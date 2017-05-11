@@ -49,12 +49,14 @@ class RunningBacks extends Component {
           </Carousel>
         </div>
         <PageHeader className="header2">Average Draft Position <small>Check the Market</small></PageHeader>
-        <div className="adpdata">
-          <tr>
-            <th><ol>{topRB.map(mflplayer =>
-              <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
-            )}</ol></th>
-          </tr>
+        <div className="dataContainter">
+          <div className="adpdata">
+            <tr>
+              <th><ol>{topRB.map(mflplayer =>
+                <Link to={`/player/${mflplayer.name.name}/${mflplayer.name.id}`}><li>{mflplayer.name.name}</li></Link>
+              )}</ol></th>
+            </tr>
+          </div>
         </div>
       </div>
     );
