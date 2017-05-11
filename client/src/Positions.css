@@ -33,7 +33,10 @@ a:active {
   width: 100%;
   column-width: 20vw;
   column-count: 4;
-  padding-left: 10%;
+  column-fill: balance;
+  -moz-column-fill: balance;
+  -webkit-column-fill: balance;
+  padding-left: 5%;
   padding-top: 1%;
   padding-bottom: 1%;
   background:rgba(0,0,0,0.7);
