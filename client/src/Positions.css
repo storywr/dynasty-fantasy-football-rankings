@@ -17,7 +17,7 @@ a:active {
 
 .positionpic {
   margin: auto;
-  width: 18%;
+  width: 25%;
 }
 
 .positionimage {
@@ -29,8 +29,8 @@ a:active {
   column-width: 15%;
   column-count: 4;
   padding-left: 13%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   background:rgba(0,0,0,0.7);
 }
 
@@ -45,6 +45,7 @@ a:active {
 }
 
 .carousel {
+  height: 10%;
   margin-left: 15%;
   margin-right: 15%;
   padding-left: 0.75%;
@@ -53,8 +54,8 @@ a:active {
 }
 
 .carousel img {
-  height: 9%;
-  width: 9%;
+  height: 10%;
+  width: 10%;
   border:2px solid rgb(15, 15, 19);
   margin-top: 2%;
 }
