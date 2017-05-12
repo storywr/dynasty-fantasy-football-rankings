@@ -18,6 +18,10 @@ h3 {
   text-decoration: underline;
 }
 
+.git {
+  padding-top: -2%;
+}
+
 .newPlayerForm {
   float: left;
   padding-left: 2%;
