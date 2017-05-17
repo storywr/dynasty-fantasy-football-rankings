@@ -9,6 +9,7 @@ class RunningBacks extends Component {
   render() {
     var mflplayers = this.props.mflplayers;
     var adp = this.props.adp;
+    var players = this.props.players;
 
     adp.forEach(player => {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);
@@ -20,6 +21,10 @@ class RunningBacks extends Component {
         player.name.name = firstName.concat(" ")
         player.name.name = player.name.name.concat(lastName)
       }
+    })
+
+    players.forEach(player => {
+      player.mfl = adp.find(mflplayer => mflplayer.name.name.trim() == player.name)
     })
 
     function checkMflRB(player) {
@@ -37,11 +42,11 @@ class RunningBacks extends Component {
         </div>
         <div className="players">
           <Carousel className="carousel">
-            {this.props.players.map(player =>
+            {players.map(player =>
               <Carousel.Item>
                 <img width={120} height={156} alt="500x150" src={player.pic}/>
                 <Carousel.Caption>
-                  <h2>{player.positional_ranking} - <Link to={`/players/${player.id}`}>{ player.name }</Link></h2>
+                  <h2>{player.positional_ranking} - <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link></h2>
                 </Carousel.Caption>
               </Carousel.Item>
             )}
