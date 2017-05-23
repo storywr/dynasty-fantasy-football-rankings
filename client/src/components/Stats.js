@@ -70,7 +70,7 @@ class Stats extends Component {
   render() {
     return (
       <div>
-        <PageHeader className="stats">Find Player Stats <small>You Should Work for PFF You NERD</small></PageHeader>
+        <PageHeader className="statsHeader">Find Player Stats <small>Numbers Don&#39;t Lie</small></PageHeader>
         <form className="newPlayerForm" onSubmit={(event) => this.handleOnSubmit(event)} >
           <input
             type="text"
@@ -85,7 +85,7 @@ class Stats extends Component {
             value="Get Fantasy Points" />
         </form><br></br><br></br><br></br><br></br><br></br>
         { (this.state.score) ?
-          <div className="fantasy">
+          <div className="fantasyStats">
             <h4>Fantasy Points</h4>
             <tr className="fantasyPoints">
               <tr><ol>{this.state.score.playerScores.playerScore.map(week =>
