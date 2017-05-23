@@ -68,6 +68,52 @@ class Stats extends Component {
 
 
   render() {
+    var LineChart = require("react-chartjs").Line;
+
+    const playerStats = []
+    if (this.state.score) {
+      this.state.score.playerScores.playerScore.forEach(week => {
+        playerStats.push(week.score)
+      })
+    }
+    const data = {
+      labels: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      datasets: [{
+        label: "Player Stats",
+        fillColor: "rgba(0, 0, 70, 0.8)",
+        strokeColor: "rgba(200,200,200,0.2)",
+  			pointColor: "rgba(200,200,200,0.2)",
+  			pointStrokeColor: "#fff",
+  			pointHighlightFill: "#fff",
+  			pointHighlightStroke: "rgba(200,200,200,0.2)",
+        data: playerStats
+      }]
+    }
+    const options = {
+      scaleGridLineColor : "rgba(200,200,200,0.2)",
+      title: {
+        display: true,
+        text: 'Player Stats'
+      },
+    }
+
     return (
       <div>
         <PageHeader className="statsHeader">Find Player Stats <small>Numbers Don&#39;t Lie</small></PageHeader>
@@ -83,15 +129,10 @@ class Stats extends Component {
           <input
             type="submit"
             value="Get Fantasy Points" />
-        </form><br></br><br></br><br></br><br></br><br></br>
+        </form><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         { (this.state.score) ?
           <div className="fantasyStats">
-            <h4>Fantasy Points</h4>
-            <tr className="fantasyPoints">
-              <tr><ol>{this.state.score.playerScores.playerScore.map(week =>
-                <li>{week.score}</li>
-              )}</ol></tr>
-            </tr>
+            <LineChart data={data} options={options} width="1000px" height="500px"/>
           </div>
           : <h3></h3>
         }
