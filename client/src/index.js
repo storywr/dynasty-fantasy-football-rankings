@@ -14,6 +14,7 @@ import WideReceivers from './components/WideReceivers';
 import Quarterbacks from './components/Quarterbacks';
 import TightEnds from './components/TightEnds';
 import ADP from './components/ADP';
+import Stats from './components/Stats';
 import League from './components/League';
 import LeagueSearch from './components/LeagueSearch';
 import RosterShow from './components/RosterShow';
@@ -39,6 +40,7 @@ ReactDOM.render(
         <Route path="/qb" component={Quarterbacks} />
         <Route path="/te" component={TightEnds} />
         <Route path="/adp" component={ADP} />
+        <Route path="/stats" component={Stats} />
         <Route path="/findleague" component={LeagueSearch} />
         <Route path="/league" component={League} />
         <Route path="/players/new" component={PlayersNew} />

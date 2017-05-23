@@ -18,7 +18,7 @@ class PlayerSearch extends Component {
   constructor(props) {
     super(props);
     this.props.actions.fetchProfile({playerid: this.props.playerid})
-    this.props.actions.fetchScore({playerid: this.props.playerid})
+    this.props.actions.fetchScore({year: 2016, playerid: this.props.playerid})
     this.state = {
       player: props.player,
       comments: props.comments,
@@ -28,7 +28,7 @@ class PlayerSearch extends Component {
       score: props.score
     };
     this.props.actions.fetchProfile({playerid: this.props.playerid})
-    this.props.actions.fetchScore({playerid: this.props.playerid})
+    this.props.actions.fetchScore({year: 2016, playerid: this.props.playerid})
   }
 
   componentWillReceiveProps(nextProps) {
