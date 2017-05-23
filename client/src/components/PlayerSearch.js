@@ -18,6 +18,7 @@ class PlayerSearch extends Component {
   constructor(props) {
     super(props);
     this.props.actions.fetchProfile({playerid: this.props.playerid})
+    this.props.actions.fetchScore({year: "2016", playerid: this.props.playerid})
     this.state = {
       player: props.player,
       comments: props.comments,
