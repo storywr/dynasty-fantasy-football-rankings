@@ -10,7 +10,7 @@
 }
 
 .playercard {
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.9);
   padding-left: 1%;
 }
 
@@ -23,8 +23,14 @@
 }
 
 .fantasy h4 {
-  text-decoration: underline;
-  padding-left: 1%;
+}
+
+.rating {
+  text-decoration: none !important;
+}
+
+.chartTitle {
+  text-decoration: none !important;
 }
 
 .playerinfo img {
@@ -45,14 +51,14 @@
   width: 40%;
   float: left;
   padding-left: 1%;
+  padding-right: 1%;
+  margin-right: 1%;
 }
 
 .fantasy {
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.9);
   float: left;
   padding-left: 1%;
-  height: 100%;
-  margin-left: 5%;
-  padding-right: 2%;
-  font-size: 120%;
+  padding-right: 1%;
+  padding-bottom: 1%;
 }

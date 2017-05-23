@@ -76,6 +76,54 @@ class PlayerSearch extends Component {
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
     const playerProfile = this.state.profile.playerProfile;
     const playerScore = this.state.score.playerScores.playerScore;
+    var LineChart = require("react-chartjs").Line;
+
+    const playerStats = []
+    if (this.state.score) {
+      this.state.score.playerScores.playerScore.forEach(week => {
+        if (week.score == "") {
+          week.score = "0"
+        }
+        playerStats.push(week.score)
+      })
+    }
+    const data = {
+      labels: [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      datasets: [{
+        label: "Player Stats",
+        fillColor: "rgba(0, 0, 70, 0.8)",
+        strokeColor: "rgba(200,200,200,0.2)",
+  			pointColor: "rgba(200,200,200,0.2)",
+  			pointStrokeColor: "#fff",
+  			pointHighlightFill: "#fff",
+  			pointHighlightStroke: "rgba(200,200,200,0.2)",
+        data: playerStats
+      }]
+    }
+    const options = {
+      scaleGridLineColor : "rgba(200,200,200,0.2)",
+      title: {
+        display: true,
+        text: 'Player Stats'
+      },
+    }
 
     return (
       <div>
@@ -93,7 +141,7 @@ class PlayerSearch extends Component {
               { (player.name) ?
                 <div>
                   <h4>Your Scouting Report</h4>
-                  <h4>{player.position} #{player.positional_ranking}
+                  <h4 className="rating">{player.position} #{player.positional_ranking}
                   &nbsp;
                   <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
                   <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
@@ -118,12 +166,8 @@ class PlayerSearch extends Component {
           </div>
         </div>
         <div className="fantasy">
-        <h4>2016 Fantasy Points</h4>
-        <tr className="fantasyPoints">
-          <tr><ol>{playerScore.map(week =>
-            <li>{week.score}</li>
-          )}</ol></tr>
-        </tr>
+          <h3 className="chartTitle">2016 Fantasy Points</h3>
+          <LineChart data={data} options={options} width="800px" height="400px"/>
         </div>
       </div>
     );
