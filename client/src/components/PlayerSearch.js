@@ -18,17 +18,18 @@ class PlayerSearch extends Component {
   constructor(props) {
     super(props);
     this.props.actions.fetchProfile({playerid: this.props.playerid})
-    this.props.actions.fetchScore({year: 2016, playerid: this.props.playerid})
     this.state = {
       player: props.player,
       comments: props.comments,
       summary: '',
       player_id: props.player.id,
       profile: props.profile,
-      score: props.score
+      score: props.score,
+      selectedOption: "2016"
     };
     this.props.actions.fetchProfile({playerid: this.props.playerid})
-    this.props.actions.fetchScore({year: 2016, playerid: this.props.playerid})
+    this.props.actions.fetchScore({year: this.state.selectedOption, playerid: this.props.playerid})
+    this.handleOnOptionChange = this.handleOnOptionChange.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,6 +37,14 @@ class PlayerSearch extends Component {
       profile: this.props.profile,
       score: this.props.score,
       comments: this.props.comments
+    });
+  }
+
+  handleOnOptionChange(event) {
+    this.props.actions.fetchScore({year: event.target.value, playerid: this.props.playerid})
+    this.setState({
+      selectedOption: event.target.value,
+      score: this.state.score
     });
   }
 
@@ -75,10 +84,9 @@ class PlayerSearch extends Component {
     const player = this.props.player;
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
     const playerProfile = this.state.profile.playerProfile;
-    const playerScore = this.state.score.playerScores.playerScore;
     var LineChart = require("react-chartjs").Line;
 
-    const playerStats = []
+    var playerStats = []
     if (this.state.score) {
       this.state.score.playerScores.playerScore.forEach(week => {
         if (week.score == "") {
@@ -166,9 +174,43 @@ class PlayerSearch extends Component {
           </div>
         </div>
         <div className="fantasy">
-          <h3 className="chartTitle">2016 Fantasy Points</h3>
+          <h3 className="chartTitle">{this.state.selectedOption} Fantasy Points</h3>
           <LineChart data={data} options={options} width="800px" height="400px"/>
         </div>
+        <form>
+          <div className="radio">
+            <label>
+              <input type="radio" value="2016"
+              checked={this.state.selectedOption === '2016'}
+              onChange={this.handleOnOptionChange} />
+              2016
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="2015"
+              checked={this.state.selectedOption === '2015'}
+              onChange={this.handleOnOptionChange} />
+              2015
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="2014"
+              checked={this.state.selectedOption === '2014'}
+              onChange={this.handleOnOptionChange} />
+              2014
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="2013"
+              checked={this.state.selectedOption === '2013'}
+              onChange={this.handleOnOptionChange} />
+              2013
+            </label>
+          </div>
+        </form>
       </div>
     );
   }
