@@ -29,7 +29,7 @@ class PlayerSearch extends Component {
       selectedOption: "2016"
     };
     this.props.actions.fetchProfile({playerid: this.props.playerid})
-    this.props.actions.fetchScore({year: this.state.selectedOption, playerid: this.props.playerid})
+    this.props.actions.fetchScore({year: "2016", playerid: this.props.playerid})
     this.handleOnOptionChange = this.handleOnOptionChange.bind(this)
   }
 
@@ -47,6 +47,7 @@ class PlayerSearch extends Component {
       selectedOption: event.target.value,
       score: this.state.score
     });
+    this.props.actions.fetchScore({year: event.target.value, playerid: this.props.playerid})
   }
 
   handleOnSubmit(event) {
