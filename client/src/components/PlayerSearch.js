@@ -97,6 +97,19 @@ class PlayerSearch extends Component {
         playerStats.push(week.score)
       })
     }
+    var total = 0
+    var gamesArray = playerStats.filter(function(score) {
+      return (score > 0)
+    })
+    for (var i = 0; i < playerStats.length; i++) {
+      total += parseFloat(playerStats[i])
+    }
+    var ppg = total / gamesArray.length
+    gamesArray.map(function(score) {
+      return parseFloat(score)
+    })
+    var max = Math.max.apply(null, gamesArray)
+    var min = Math.min.apply(null, gamesArray)
     const data = {
       labels: [
         "1",
@@ -177,7 +190,10 @@ class PlayerSearch extends Component {
         </div>
         <div className="fantasy">
           <h3 className="chartTitle">{this.state.selectedOption} Fantasy Points</h3>
-          <LineChart data={data} options={options} width="800px" height="400px"/>
+          <LineChart data={data} options={options} width="800px" height="400px"/><br></br><br></br>
+          <p> Avg: {ppg.toFixed(2)}</p>
+          <p> Max: {max}</p>
+          <p> Min: {min}</p>
         </div>
         <form>
           <div className="radio">
