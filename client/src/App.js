@@ -43,17 +43,17 @@ export class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem eventKey={1} href="#"><Link to="/rb">RB</Link></NavItem>
-            <NavItem eventKey={2} href="#"><Link to="/wr">WR</Link></NavItem>
-            <NavItem eventKey={3} href="#"><Link to="/qb">QB</Link></NavItem>
-            <NavItem eventKey={4} href="#"><Link to="/te">TE</Link></NavItem>
-            <NavItem eventKey={5} href="#"><Link to="/adp">ADP</Link></NavItem>
-            <NavItem eventKey={6} href="#"><Link to="/stats">Stats</Link></NavItem>
+            <NavItem eventKey={1} href="#"><Link to="/stats">Stat Finder</Link></NavItem>
+            <NavItem eventKey={2} href="#"><Link to="/rb">RB</Link></NavItem>
+            <NavItem eventKey={3} href="#"><Link to="/wr">WR</Link></NavItem>
+            <NavItem eventKey={4} href="#"><Link to="/qb">QB</Link></NavItem>
+            <NavItem eventKey={5} href="#"><Link to="/te">TE</Link></NavItem>
+            <NavItem eventKey={6} href="#"><Link to="/adp">ADP</Link></NavItem>
             <NavItem eventKey={7} href="#"><Link to="/league">League</Link></NavItem>
             <NavItem eventKey={8} href="#"><Link to="/players/new">Add Player</Link></NavItem>
             <NavItem className="git" eventKey={9} href="https://github.com/storywr/fantasy-football-scout">Github Repo</NavItem>
             <a href="https://github.com/storywr/fantasy-football-scout">
-              <img width={50} height={50} src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"/>
+              <img className = "gitLogo" width={40} height={40} src="https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png"/>
             </a>
           </Nav>
         </Navbar>
