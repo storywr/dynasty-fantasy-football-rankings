@@ -73,6 +73,9 @@ class Stats extends Component {
     const playerStats = []
     if (this.state.score) {
       this.state.score.playerScores.playerScore.forEach(week => {
+        if (week.score == "") {
+          week.score = "0"
+        }
         playerStats.push(week.score)
       })
     }
