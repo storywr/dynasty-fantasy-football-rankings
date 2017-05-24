@@ -13,8 +13,9 @@
   float: left;
   background:rgba(0,0,0,0.9);
   padding-left: 1%;
-  width: 40%;
   padding-top: 1%;
+  width: 40%;
+  min-height: 600px;
   margin-left: 1%;
   margin-bottom: 2%;
 }
@@ -35,7 +36,6 @@
 }
 
 .playerinfo img {
-  border:5px solid rgb(15, 15, 19);
 }
 
 .profilepic {
@@ -55,6 +55,7 @@
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
+  min-height: 600px;
 }
 
 #player {
