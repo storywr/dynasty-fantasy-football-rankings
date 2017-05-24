@@ -195,7 +195,8 @@ class PlayerSearch extends Component {
               <h5>Height: {playerProfile.player.height}</h5>
               <h5>Weight: {playerProfile.player.weight}</h5>
               <h5>ADP: {playerProfile.player.adp}</h5>
-              <h5>Stats Year: </h5>
+              &nbsp;
+              <h5>Choose Stats Year: </h5>
               <form>
                 <div className="radio">
                   <label>
@@ -272,7 +273,7 @@ class PlayerSearch extends Component {
                   </Modal.Footer>
                 </Modal>
                 </div>
-                : <h3>You have not added this player to your Rankings!</h3>
+                : <h4>You have not added this player to your Rankings!</h4>
               }
               &nbsp;
               <div>
