@@ -304,6 +304,7 @@ class PlayerSearch extends Component {
         <div className="fantasy">
           <h3 className="chartTitle">{this.state.selectedOption} Fantasy Points</h3>
           <LineChart data={data} options={options} width="800px" height="400px"/><br></br><br></br>
+          &nbsp;
           <p> Avg: {ppg.toFixed(2)}</p>
           <p> Max: {max}</p>
           <p> Min: {min}</p>
