@@ -21,6 +21,7 @@ class PlayerSearch extends Component {
     this.props.actions.fetchScore({year: "2016", playerid: this.props.playerid})
     this.state = {
       player: props.player,
+      playerName: props.playerName,
       comments: props.comments,
       summary: '',
       player_id: props.player.id,
@@ -147,11 +148,11 @@ class PlayerSearch extends Component {
         text: 'Player Stats'
       },
     }
+    const url = `https://www.youtube.com/embed?listType=search&list=${this.state.playerName}`
 
     return (
       <div>
         <PageHeader className="playerheader">{playerProfile.name.split(" ")[1]} {playerProfile.name.split(" ")[0].slice(0, -1)} <small>{player.team}</small></PageHeader>
-        <div className="player">
           <div className="playercard">
             <div className="playerinfo">
               <img className="profilepic" src={player.pic || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/><br></br>
@@ -185,7 +186,6 @@ class PlayerSearch extends Component {
                 </div>
                 : <h3>You have not added this player to your Rankings!</h3>
               }
-            </div>
           </div>
         </div>
         <div className="fantasy">
@@ -229,6 +229,10 @@ class PlayerSearch extends Component {
             </label>
           </div>
         </form>
+        <iframe id="player" type="text/html"
+          src={url}
+          frameborder="0">
+        </iframe>
       </div>
     );
   }
@@ -246,7 +250,8 @@ const mapStateToProps = (state, ownProps) => {
     comments: state.comments,
     playerid: ownProps.routeParams.id,
     profile: state.profile,
-    score: state.score
+    score: state.score,
+    playerName: ownProps.routeParams.name.trim()
   };
 };
 

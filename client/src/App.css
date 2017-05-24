@@ -12,6 +12,10 @@
     ),
     /* bottom, image */
     url(https://s-media-cache-ak0.pinimg.com/originals/c8/32/d3/c832d3d2226449bedbc2382672bdec45.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h3 {

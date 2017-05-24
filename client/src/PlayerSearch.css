@@ -10,12 +10,13 @@
 }
 
 .playercard {
+  float: left;
   background:rgba(0,0,0,0.9);
   padding-left: 1%;
-}
-
-.playerinfo {
-  padding: 15px;
+  width: 40%;
+  padding-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 2%;
 }
 
 .playerinfo h4 {
@@ -47,18 +48,18 @@
   width: 100%;
 }
 
-.player {
-  width: 40%;
-  float: left;
-  padding-left: 1%;
-  padding-right: 1%;
-  margin-right: 1%;
-}
-
 .fantasy {
   background:rgba(0,0,0,0.9);
   float: left;
+  margin-left: 1%;
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 1%;
+}
+
+#player {
+  margin-left: 1%;
+  width: 60vw;
+  height: 70vh;
+  margin-bottom: 2%;
 }

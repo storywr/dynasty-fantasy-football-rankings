@@ -9,7 +9,6 @@ import { fetchComments } from  '../actions/comments.js'
 import { addComment } from '../actions/comments';
 import { bindActionCreators } from 'redux';
 import '../App.css'
-import '../Player.css'
 
 class PlayersShow extends Component {
 
