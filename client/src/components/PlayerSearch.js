@@ -12,6 +12,7 @@ import { fetchScore } from '../actions/score';
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../PlayerSearch.css'
+import { Modal, OverlayTrigger, Button, Popover, Tooltip } from 'react-bootstrap';
 
 class PlayerSearch extends Component {
 
@@ -27,11 +28,33 @@ class PlayerSearch extends Component {
       player_id: props.player.id,
       profile: props.profile,
       score: props.score,
-      selectedOption: "2016"
+      selectedOption: "2016",
+      showModal: false,
+      showModalVideo: false
     };
     this.props.actions.fetchProfile({playerid: this.props.playerid})
     this.props.actions.fetchScore({year: "2016", playerid: this.props.playerid})
     this.handleOnOptionChange = this.handleOnOptionChange.bind(this)
+    this.close = this.close.bind(this)
+    this.open = this.open.bind(this)
+    this.closeVideo = this.closeVideo.bind(this)
+    this.openVideo = this.openVideo.bind(this)
+  }
+
+  close() {
+    this.setState({ showModal: false });
+  }
+
+  open() {
+    this.setState({ showModal: true });
+  }
+
+  closeVideo() {
+    this.setState({ showModalVideo: false });
+  }
+
+  openVideo() {
+    this.setState({ showModalVideo: true });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -84,6 +107,17 @@ class PlayerSearch extends Component {
   }
 
   render() {
+    const popover = (
+      <Popover id="modal-popover" title="popover">
+        very popover. such engagement
+      </Popover>
+    );
+    const tooltip = (
+      <Tooltip id="modal-tooltip">
+        wow.
+      </Tooltip>
+    );
+
     const player = this.props.player;
     const comments = this.props.comments.filter(comment => comment.player_id === player.id)
     const playerProfile = this.state.profile.playerProfile;
@@ -161,31 +195,110 @@ class PlayerSearch extends Component {
               <h5>Height: {playerProfile.player.height}</h5>
               <h5>Weight: {playerProfile.player.weight}</h5>
               <h5>ADP: {playerProfile.player.adp}</h5>
+              <h5>Stats Year: </h5>
+              <form>
+                <div className="radio">
+                  <label>
+                    <input type="radio" value="2016"
+                    checked={this.state.selectedOption === '2016'}
+                    onChange={this.handleOnOptionChange} />
+                    2016
+                  </label>
+                </div>
+                <div className="radio">
+                  <label>
+                    <input type="radio" value="2015"
+                    checked={this.state.selectedOption === '2015'}
+                    onChange={this.handleOnOptionChange} />
+                    2015
+                  </label>
+                </div>
+                <div className="radio">
+                  <label>
+                    <input type="radio" value="2014"
+                    checked={this.state.selectedOption === '2014'}
+                    onChange={this.handleOnOptionChange} />
+                    2014
+                  </label>
+                </div>
+                <div className="radio">
+                  <label>
+                    <input type="radio" value="2013"
+                    checked={this.state.selectedOption === '2013'}
+                    onChange={this.handleOnOptionChange} />
+                    2013
+                  </label>
+                </div>
+              </form>
               &nbsp;
               { (player.name) ?
                 <div>
-                  <h4>Your Scouting Report</h4>
-                  <h4 className="rating">{player.position} #{player.positional_ranking}
-                  &nbsp;
-                  <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
-                  <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>
-                  </h4>
-                  <ul className="comments">{comments.map(comment =>
-                    <li>{comment.summary}</li>
-                  )}</ul><br></br>
-                  <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
-                    <input
-                      ref="scouting"
-                      type="textarea"
-                      className="summaryBox"
-                      onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
-                    <input
-                      type="submit"
-                      value="Add Comment" />
-                  </form>
+                <Button
+                  bsStyle="primary"
+                  bsSize="large"
+                  onClick={this.open}
+                >
+                  See Scouting Report
+                </Button>
+        ​
+                <Modal show={this.state.showModal} onHide={this.close}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Your Scouting Report</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <h4>{player.position} #{player.positional_ranking}</h4>
+                    <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
+                    <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>      ​
+                    <hr />
+        ​                <div>
+                          <ul className="comments">{comments.map(comment =>
+                            <li>{comment.summary}</li>
+                          )}</ul><br></br>
+                          <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
+                            <input
+                              ref="scouting"
+                              type="textarea"
+                              className="summaryBox"
+                              onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
+                            <input
+                              type="submit"
+                              value="Add Comment" />
+                          </form>
+                        </div>
+
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button onClick={this.close}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
                 </div>
                 : <h3>You have not added this player to your Rankings!</h3>
               }
+              &nbsp;
+              <div>
+              <Button
+                bsStyle="primary"
+                bsSize="large"
+                onClick={this.openVideo}
+              >
+                Go to the Game Tape
+              </Button>
+      ​
+              <Modal bsSize="large" show={this.state.showModalVideo} onHide={this.closeVideo}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Go to the Game Tape!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <iframe id="player" type="text/html"
+                  src={url}
+                  frameborder="0">
+                </iframe>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={this.closeVideo}>Close</Button>
+                </Modal.Footer>
+              </Modal>
+              </div>
           </div>
         </div>
         <div className="fantasy">
@@ -195,44 +308,6 @@ class PlayerSearch extends Component {
           <p> Max: {max}</p>
           <p> Min: {min}</p>
         </div>
-        <form>
-          <div className="radio">
-            <label>
-              <input type="radio" value="2016"
-              checked={this.state.selectedOption === '2016'}
-              onChange={this.handleOnOptionChange} />
-              2016
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="2015"
-              checked={this.state.selectedOption === '2015'}
-              onChange={this.handleOnOptionChange} />
-              2015
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="2014"
-              checked={this.state.selectedOption === '2014'}
-              onChange={this.handleOnOptionChange} />
-              2014
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="2013"
-              checked={this.state.selectedOption === '2013'}
-              onChange={this.handleOnOptionChange} />
-              2013
-            </label>
-          </div>
-        </form>
-        <iframe id="player" type="text/html"
-          src={url}
-          frameborder="0">
-        </iframe>
       </div>
     );
   }

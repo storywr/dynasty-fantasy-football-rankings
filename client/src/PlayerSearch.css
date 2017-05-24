@@ -5,8 +5,8 @@
 .updateButton {
   border-radius: 50%;
   width: 30px;
-  background-color: grey;
-  border:4px solid rgb(15, 15, 19);
+  background-color: white;
+  border:2px solid rgb(15, 15, 19);
 }
 
 .playercard {
@@ -59,8 +59,6 @@
 }
 
 #player {
-  margin-left: 1%;
-  width: 60vw;
-  height: 70vh;
-  margin-bottom: 2%;
+  width: 100%;
+  height: 50vh;
 }
