@@ -7,6 +7,7 @@ import { browserHistory } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
+import {Button, FormGroup, FormControl } from 'react-bootstrap';
 
 class PlayersNew extends Component {
 
@@ -62,29 +63,29 @@ class PlayersNew extends Component {
       <div>
         <PageHeader className="newplayerheader">Add Player <small>Rankings</small></PageHeader>
         <form className="newPlayerForm" onSubmit={(event) => this.handleOnSubmit(event)} >
-          <input
+          <FormControl
             type="text"
             placeholder="Name"
             onChange={(event) => this.handleOnNameChange(event)} /><br></br>
-          <input
+          <FormControl
             type="text"
             placeholder="Position"
             onChange={(event) => this.handleOnPositionChange(event)} /><br></br>
-          <input
+          <FormControl
             type="text"
             placeholder="Team"
             onChange={(event) => this.handleOnTeamChange(event)} /><br></br>
-          <input
+          <FormControl
             type="text"
             placeholder="Positional Ranking"
             onChange={(event) => this.handleOnRankingChange(event)} /><br></br>
-          <input
+          <FormControl
             type="text"
             placeholder="Pic URL"
-            onChange={(event) => this.handleOnPicChange(event)} /><br></br><br></br>
-          <input
-            type="submit"
-            value="Add Player" />
+            onChange={(event) => this.handleOnPicChange(event)} /><br></br>
+          <Button type="submit">
+            Add Player
+          </Button>
         </form>
       </div>
     );

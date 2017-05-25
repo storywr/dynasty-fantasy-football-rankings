@@ -12,7 +12,7 @@ import { fetchScore } from '../actions/score';
 import { bindActionCreators } from 'redux';
 import '../App.css'
 import '../PlayerSearch.css'
-import { Modal, OverlayTrigger, Button, Popover, Tooltip } from 'react-bootstrap';
+import { Modal, OverlayTrigger, Button, Popover, Tooltip, FormGroup, FormControl } from 'react-bootstrap';
 
 class PlayerSearch extends Component {
 
@@ -248,22 +248,20 @@ class PlayerSearch extends Component {
                   </Modal.Header>
                   <Modal.Body>
                     <h4>{player.position} #{player.positional_ranking}</h4>
-                    <button className="updateButton" onClick={(event) => this.handleMinusOnClick(event)} type="button">+</button>
-                    <button className="updateButton" onClick={(event) => this.handlePlusOnClick(event)} type="button">-</button>      ​
                     <hr />
         ​                <div>
                           <ul className="comments">{comments.map(comment =>
                             <li>{comment.summary}</li>
                           )}</ul><br></br>
-                          <form className="myForm" onSubmit={(event) => this.handleOnSubmit(event)} >
-                            <input
+                          <form onSubmit={(event) => this.handleOnSubmit(event)} >
+                            <FormControl
+                              componentClass="textarea"
                               ref="scouting"
                               type="textarea"
-                              className="summaryBox"
-                              onChange={(event) => this.handleOnSummaryChange(event)} /><br></br><br></br>
-                            <input
-                              type="submit"
-                              value="Add Comment" />
+                              onChange={(event) => this.handleOnSummaryChange(event)} /><br></br>
+                            <Button type="submit">
+                              Add Comment
+                            </Button>
                           </form>
                         </div>
 

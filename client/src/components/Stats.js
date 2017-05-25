@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router';
 import * as ReactBootstrap from 'react-bootstrap';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
+import {Button, FormGroup, FormControl } from 'react-bootstrap';
 
 class Stats extends Component {
 
@@ -121,17 +122,17 @@ class Stats extends Component {
       <div>
         <PageHeader className="statsHeader">Find Player Stats <small>Numbers Don&#39;t Lie</small></PageHeader>
         <form className="newPlayerForm" onSubmit={(event) => this.handleOnSubmit(event)} >
-          <input
+          <FormControl
             type="text"
             placeholder="Year"
-            onChange={(event) => this.handleOnYearChange(event)} /><br></br><br></br>
-          <input
+            onChange={(event) => this.handleOnYearChange(event)} /><br></br>
+          <FormControl
             type="text"
             placeholder="Player Name"
-            onChange={(event) => this.handleOnPlayerIDChange(event)} /><br></br><br></br>
-          <input
-            type="submit"
-            value="Get Fantasy Points" />
+            onChange={(event) => this.handleOnPlayerIDChange(event)} /><br></br>
+          <Button type="submit">
+            Get Fantasy Points
+          </Button>
         </form><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         { (this.state.score) ?
           <div className="fantasyStats">
