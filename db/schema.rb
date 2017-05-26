@@ -62,9 +62,6 @@ ActiveRecord::Schema.define(version: 20170526003635) do
   create_table "yahoolists", force: :cascade do |t|
     t.string   "name"
     t.string   "pic"
-    t.string   "position"
-    t.string   "team"
-    t.integer  "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

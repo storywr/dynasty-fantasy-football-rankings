@@ -9,7 +9,6 @@ import { fetchComments } from  './actions/comments.js'
 import { fetchProfile } from  './actions/profile.js'
 import { fetchScore } from  './actions/score.js'
 import { fetchYahoolists } from  './actions/yahoolists.js'
-import { fetchYPlayers } from  './actions/yplayers.js'
 import { Link } from 'react-router';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import './App.css'
@@ -17,8 +16,6 @@ import styles from './App.css'
 
 export class App extends Component {
   componentDidMount() {
-    this.props.actions.fetchProfile({playerid: '11679'})
-    this.props.actions.fetchScore({year: 2016, playerid: '11679'})
     if (this.props.players.length === 0) {
       this.props.actions.fetchPlayers()
     }
@@ -34,6 +31,8 @@ export class App extends Component {
     if (this.props.league.length === 0) {
       this.props.actions.fetchMyLeague()
     }
+    this.props.actions.fetchProfile({playerid: '11679'})
+    this.props.actions.fetchScore({year: 2016, playerid: '11679'})
     if (this.props.yahoolists.length === 0) {
       this.props.actions.fetchYahoolists()
     }
@@ -69,12 +68,12 @@ export class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {players: state.players, comments: state.comments, mflplayers: state.mflplayers, adp: state.adp, league: state.league, profile: state.profile, score: state.score, yahoolists: state.yahoolists, yplayers: state.yplayers}
+  return {players: state.players, comments: state.comments, mflplayers: state.mflplayers, adp: state.adp, league: state.league, profile: state.profile, score: state.score, yahoolists: state.yahoolists}
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP, fetchMyLeague, fetchProfile, fetchScore, fetchYahoolists, fetchYPlayers }, dispatch)
+    actions: bindActionCreators({ fetchPlayers, fetchComments, fetchMyFantasyLeaguePlayers, fetchMyFantasyLeagueADP, fetchMyLeague, fetchProfile, fetchScore, fetchYahoolists }, dispatch)
   }
 }
 
