@@ -10,7 +10,6 @@ class TightEnds extends Component {
     var mflplayers = this.props.mflplayers;
     var adp = this.props.adp;
     var players = this.props.players;
-    var yahoolists = this.props.yahoolists
 
     adp.forEach(player => {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);
@@ -24,7 +23,7 @@ class TightEnds extends Component {
       }
     })
 
-    yahoolists.forEach(player => {
+    players.forEach(player => {
       player.mfl = adp.find(mflplayer => mflplayer.name.name.trim() == player.name)
     })
 
@@ -43,14 +42,11 @@ class TightEnds extends Component {
         </div>
         <div className="players">
           <Carousel className="carousel">
-            {yahoolists.map(player =>
+            {this.props.players.map(player =>
               <Carousel.Item>
-                <img width={250} height={250} src={"https://" + player.pic}/>
+                <img width={120} height={156} alt="500x150" src={player.pic}/>
                 <Carousel.Caption>
-                { (player.mfl)
-                  ? <h2>{player.positional_ranking}. <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link> - { player.team }</h2>
-                  : <h2>{player.positional_ranking}. { player.name }</h2>
-                }
+                  <h2>{player.positional_ranking} - <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link></h2>
                 </Carousel.Caption>
               </Carousel.Item>
             )}
@@ -81,10 +77,7 @@ const mapStateToProps = (state) => {
       return a.positional_ranking - b.positional_ranking
     }),
     mflplayers: state.mflplayers.players.player,
-    adp: state.adp.adp.player,
-    yahoolists: state.yahoolists.filter(checkTE).sort(function(a, b){
-      return a.positional_ranking - b.positional_ranking
-    }),
+    adp: state.adp.adp.player
   };
 };
 
