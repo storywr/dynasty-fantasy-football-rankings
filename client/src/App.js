@@ -33,9 +33,7 @@ export class App extends Component {
     }
     this.props.actions.fetchProfile({playerid: '11679'})
     this.props.actions.fetchScore({year: 2016, playerid: '11679'})
-    if (this.props.yahoolists.length === 0) {
-      this.props.actions.fetchYahoolists()
-    }
+    this.props.actions.fetchYahoolists()
   }
   render() {
     return (
