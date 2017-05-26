@@ -136,7 +136,6 @@ DEPENDENCIES
   foreman (~> 0.82.0)
   httparty
   listen (~> 3.0.5)
-  nokogiri
   pg
   pry
   puma (~> 3.0)
