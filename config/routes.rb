@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get '/league/', to: 'leagues#league'
     get '/roster/', to: 'rosters#roster'
     get '/yahoolists/', to: 'yahoolists#yahoolists'
+    get '/yplayers/', to: 'yahoolists#index'
     post '/profiles/', to: 'profiles#profile'
     post '/scores/', to: 'scores#score'
     post '/players/', to: 'players#update'

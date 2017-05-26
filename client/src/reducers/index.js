@@ -8,6 +8,7 @@ import rosters from './rosters';
 import profile from './profile';
 import score from './score';
 import yahoolists from './yahoolists';
+import yplayers from './yplayers';
 
 const rootReducer =  combineReducers({
   players,
@@ -18,7 +19,8 @@ const rootReducer =  combineReducers({
   rosters,
   profile,
   score,
-  yahoolists
+  yahoolists,
+  yplayers
 });
 
 export default rootReducer;
