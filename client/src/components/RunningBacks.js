@@ -47,7 +47,10 @@ class RunningBacks extends Component {
               <Carousel.Item>
                 <img width={250} height={250} src={"https://" + player.pic}/>
                 <Carousel.Caption>
-                  <h2>{player.name}</h2>
+                  { (player.mfl)
+                    ? <h2>{player.positional_ranking}. <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link> - { player.team }</h2>
+                    : <h2>{player.positional_ranking}. { player.name }</h2>
+                  }
                 </Carousel.Caption>
               </Carousel.Item>
             )}

@@ -189,7 +189,7 @@ class PlayerSearch extends Component {
         <PageHeader className="playerheader">{playerProfile.name.split(" ")[1]} {playerProfile.name.split(" ")[0].slice(0, -1)} <small>{player.team}</small></PageHeader>
           <div className="playercard">
             <div className="playerinfo">
-              <img className="profilepic" src={player.pic || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/><br></br>
+              <img className="profilepic" src={"https://" + player.pic || "http://i.nflcdn.com/static/site/7.5/img/video/poster-frames/poster-frame-280x210.jpg"}/><br></br>
               &nbsp;
               <h5>Age/DOB: {playerProfile.player.age} / {playerProfile.player.dob}</h5>
               <h5>Height: {playerProfile.player.height}</h5>
@@ -315,7 +315,7 @@ class PlayerSearch extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   var foundPlayer = ""
-  state.players.forEach(function(player){
+  state.yahoolists.forEach(function(player){
     if (searchPlayers(player, ownProps)) {
       foundPlayer = searchPlayers(player, ownProps)
     }

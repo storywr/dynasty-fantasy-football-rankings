@@ -64,9 +64,10 @@ ActiveRecord::Schema.define(version: 20170526003635) do
     t.string   "pic"
     t.string   "position"
     t.string   "team"
+    t.string   "positional_ranking"
     t.integer  "ranking"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

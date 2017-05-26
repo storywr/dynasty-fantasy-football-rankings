@@ -10,6 +10,7 @@ class WideReceivers extends Component {
     var mflplayers = this.props.mflplayers;
     var adp = this.props.adp;
     var players = this.props.players;
+    var yahoolists = this.props.yahoolists
 
     adp.forEach(player => {
       player.name = mflplayers.find(mflplayer => mflplayer.id == player.id);
@@ -23,7 +24,7 @@ class WideReceivers extends Component {
       }
     })
 
-    players.forEach(player => {
+    yahoolists.forEach(player => {
       player.mfl = adp.find(mflplayer => mflplayer.name.name.trim() == player.name)
     })
 
@@ -42,11 +43,14 @@ class WideReceivers extends Component {
         </div>
         <div className="players">
           <Carousel className="carousel">
-            {this.props.players.map(player =>
+            {yahoolists.map(player =>
               <Carousel.Item>
-                <img width={120} height={156} alt="500x150" src={player.pic}/>
+                <img width={250} height={250} src={"https://" + player.pic}/>
                 <Carousel.Caption>
-                  <h2>{player.positional_ranking} - <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link></h2>
+                { (player.mfl)
+                  ? <h2>{player.positional_ranking}. <Link to={`/player/${player.name}/${player.mfl.id}`}>{ player.name }</Link> - { player.team }</h2>
+                  : <h2>{player.positional_ranking}. { player.name }</h2>
+                }
                 </Carousel.Caption>
               </Carousel.Item>
             )}
@@ -77,7 +81,10 @@ const mapStateToProps = (state) => {
       return a.positional_ranking - b.positional_ranking
     }),
     mflplayers: state.mflplayers.players.player,
-    adp: state.adp.adp.player
+    adp: state.adp.adp.player,
+    yahoolists: state.yahoolists.filter(checkWR).sort(function(a, b){
+      return a.positional_ranking - b.positional_ranking
+    }),
   };
 };
 

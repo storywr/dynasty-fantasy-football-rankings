@@ -5,6 +5,7 @@ class CreateYahoolists < ActiveRecord::Migration[5.0]
       t.string "pic"
       t.string "position"
       t.string "team"
+      t.string "positional_ranking"
       t.integer "ranking"
       t.timestamps
     end

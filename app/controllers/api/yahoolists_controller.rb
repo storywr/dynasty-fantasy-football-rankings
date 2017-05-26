@@ -19,7 +19,10 @@ class Api::YahoolistsController < ApplicationController
           name = name.join(' ')
           team = player.css("td.player-label").text.split(' ').pop
           position = player.css("td").text.split(' ').last[0, 2]
-          Yahoolist.create({name: name, pic: pimage, position: position, team: team, ranking: i})
+          if team != nil
+            positional_ranking = player.css("td")[2].text[2,  player.css("td")[2].text.length]
+            Yahoolist.create({name: name, pic: pimage, position: position, team: team, positional_ranking: positional_ranking, ranking: i})
+          end
         else
           break
         end
