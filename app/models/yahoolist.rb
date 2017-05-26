@@ -1,0 +1,2 @@
+class Yahoolist < ApplicationRecord
+end
